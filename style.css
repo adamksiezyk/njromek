@@ -1,0 +1,226 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply some basic styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+section {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Homepage */
+/* ... Previous CSS code ... */
+section#home {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.homepage-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.homepage-content img {
+    max-width: 700px;
+    height: auto;
+}
+
+.homepage-text {
+    padding: 20px;
+}
+
+.homepage-text h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.homepage-text p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #555;
+}
+
+/* ... Previous CSS code ... */
+.social-media {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #fff;
+}
+
+.social-icons img {
+    width: 40px;
+    margin: 0 10px;
+}
+
+.events-and-updates {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #f0f0f0;
+}
+
+.events-and-updates ul {
+    list-style: none;
+}
+
+.events-and-updates li {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.events-and-updates a {
+    text-decoration: none;
+    color: #333;
+}
+
+.events-and-updates a:hover {
+    text-decoration: underline;
+}
+
+/* ... Previous CSS code ... */
+.mobile-friendly-videos {
+    background-color: #f0f0f0;
+    text-align: center;
+    padding: 40px 0;
+    color: #333;
+}
+
+.mobile-friendly-videos h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.mobile-friendly-videos p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Style the video container */
+.mobile-friendly-videos video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #666;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Instructors */
+#instructors {
+/*  */
+    text-align: center;
+    padding: 40px 0;
+}
+
+.instructor {
+    margin-bottom: 20px;
+}
+
+.instructor img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.instructor h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.instructor p {
+    font-size: 16px;
+    color: #666;
+    margin: 5px 0;
+}
+
+/* ... Previous CSS code ... */
+#cars {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.card {
+    display: inline-block;
+    width: 250px;
+    margin: 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
