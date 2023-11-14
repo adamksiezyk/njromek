@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Modern Driving School</title>
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -138,26 +139,36 @@
 		</div>
 		<!-- events -->
 		<!-- Cars gallery -->
-		<section id="cars">
-			<h2>Available Cars</h2>
-			<div class="card">
-				<img src="/assets/car1.png" alt="Car 1">
-				<h3>Car Model 1</h3>
-				<p>Price: $X,XXX per hour</p>
-				<p>Features: Feature 1, Feature 2, Feature 3</p>
+		<h2>Available Cars</h2>
+		<section id="cars" class="swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+					<div class="card">
+						<img src="/assets/car1.png" alt="Car 1">
+						<h3>Car Model 1</h3>
+						<p>Price: $X,XXX per hour</p>
+						<p>Features: Feature 1, Feature 2, Feature 3</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<img src="/assets/car2.png" alt="Car 1">
+						<h3>Car Model 2</h3>
+						<p>Price: $X,XXX per hour</p>
+						<p>Features: Feature 1, Feature 2, Feature 3</p>
+					</div>
+				</div>
+				<div class="swiper-slide">
+					<div class="card">
+						<img src="/assets/car3.png" alt="Car 1">
+						<h3>Car Model 3</h3>
+						<p>Price: $X,XXX per hour</p>
+						<p>Features: Feature 1, Feature 2, Feature 3</p>
+					</div>
+				</div>
 			</div>
-			<div class="card">
-				<img src="/assets/car2.png" alt="Car 2">
-				<h3>Car Model 2</h3>
-				<p>Price: $X,XXX per hour</p>
-				<p>Features: Feature 1, Feature 2, Feature 3</p>
-			</div>
-			<div class="card">
-				<img src="/assets/car3.png" alt="Car 3">
-				<h3>Car Model 3</h3>
-				<p>Price: $X,XXX per hour</p>
-				<p>Features: Feature 1, Feature 2, Feature 3</p>
-			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
 		</section>
 		<!-- Social media -->
 		<div class="social-media">
@@ -176,5 +187,20 @@
     <footer>
         <!-- Footer content goes here -->
     </footer>
+
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script>
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 'auto',
+			initialSlide: 0,
+			spaceBetween: 100,
+			centeredSlides: true,
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+			grabCursor: true,
+		});
+	</script>
 </body>
 </html>

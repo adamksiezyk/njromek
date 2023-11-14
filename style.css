@@ -8,6 +8,7 @@
 /* Apply some basic styling */
 body {
 	font-family: 'acumin-pro',sans-serif;
+    font-size: 24px;
 }
 
 header {
@@ -75,7 +76,6 @@ section#home {
 }
 
 .homepage-text p {
-    font-size: 16px;
     color: #666;
     margin-bottom: 20px;
 }
@@ -112,11 +112,16 @@ section#home {
     margin: 100px auto;
 }
 
+.events > h2 {
+	margin-bottom: 20px;
+}
+
 .calendar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
     font-family: 'Kanit', sans-serif;
+	padding: 20px;
 }
 
 .calendar-base {
@@ -253,10 +258,6 @@ section#home {
 }
 
 @media screen and (max-width: 992px) {
-	* {
-		font-size: 24px;
-	}
-
 	/* Events */
 	.calendar {
 		flex-direction: column-reverse;
@@ -284,12 +285,10 @@ section#home {
 }
 
 .mobile-friendly-videos h2 {
-    font-size: 24px;
     margin-bottom: 20px;
 }
 
 .mobile-friendly-videos p {
-    font-size: 16px;
     margin-bottom: 20px;
 }
 
@@ -305,45 +304,18 @@ section#home {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Instructors */
-#instructors {
-/*  */
-    text-align: center;
-    padding: 40px 0;
-}
-
-.instructor {
-    margin-bottom: 20px;
-}
-
-.instructor img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    border: 2px solid #333;
-}
-
-.instructor h2 {
-    font-size: 24px;
-    margin: 10px 0;
-}
-
-.instructor p {
-    font-size: 16px;
-    color: #666;
-    margin: 5px 0;
-}
-
 /* ... Previous CSS code ... */
 #cars {
     text-align: center;
     padding: 40px 0;
 }
 
+#cars > h2 {
+	margin-bottom: 20px;
+}
+
 .card {
-    display: inline-block;
-    width: 250px;
-    margin: 0 20px;
+    width: 600px;
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
@@ -357,16 +329,30 @@ section#home {
 }
 
 .card h3 {
-    font-size: 18px;
     margin: 10px 0;
 }
 
 .card p {
-    font-size: 14px;
     color: #666;
     margin: 5px 0;
 }
 
 .card:hover {
     transform: scale(1.05);
+}
+
+/* Add Swiper styles */
+.swiper-container {
+    width: 100%;
+    padding: 20px;
+	overflow: hidden;
+}
+
+.swiper-slide {
+	width: auto !important;
+    text-align: center;
+}
+.swiper-pagination {
+	position: static;
+    margin-top: 10px;
 }
