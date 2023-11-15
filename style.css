@@ -11,25 +11,93 @@ body {
     font-size: 24px;
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+/* Navbar styles */
+#navbar {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	z-index: 1000;
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+	text-align: center;
 }
 
-nav ul {
-    list-style: none;
+#navbar a {
+  display: inline-block;
+  padding: 14px 16px;
+  color: #333;
+  text-align: center;
+  text-decoration: none;
 }
 
-nav ul li {
-    display: inline;
-    margin: 0 20px;
+/* Logo styles */
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
 }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
+/* Burger icon styles */
+.burger-icon {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  padding: 15px;
+  position: relative;
+  left: 20px;
+  transition: left 0.5s; /* Transition for left property */
+}
+
+.burger-icon.close {
+  left: 180px; /* Adjust as needed */
+}
+
+/* Sidebar styles */
+.sidebar {
+  height: 100%;
+  width: 0;
+  padding-top: 100px;
+  padding-left: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.close {
+  width: 250px;
+  padding-left: 20px;
+}
+
+.sidebar a {
+  padding: 15px;
+  text-decoration: none;
+  color: #333;
+  display: block;
+  text-align: left;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+/* Media query for mobile */
+@media screen and (max-width: 992px) {
+  #navbar {
+	text-align: left;
+  }
+
+  #navbar a {
+	display: none;
+  }
+
+  .burger-icon {
+	display: inline-block;
+  }
 }
 
 section {

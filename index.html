@@ -7,18 +7,24 @@
 </head>
 <body>
 	<!-- Navbar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#blog">Blog</a></li>
-            </ul>
-        </nav>
+    <header id="navbar">
+		<div class="burger-icon" onclick="toggleSidebar()">&#9776;</div>
+		<a href="#home">Home</a>
+		<a href="#courses">Courses</a>
+		<a href="#pricing">Pricing</a>
+		<a href="#about">About Us</a>
+		<a href="#contact">Contact</a>
+		<a href="#blog">Blog</a>
     </header>
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+		<a href="#home">Home</a>
+		<a href="#courses">Courses</a>
+		<a href="#pricing">Pricing</a>
+		<a href="#about">About Us</a>
+		<a href="#contact">Contact</a>
+		<a href="#blog">Blog</a>
+  	</div>
 	<!-- Homepage -->
 	<section id="home">
 		<!-- Banner -->
@@ -202,5 +208,22 @@
 			grabCursor: true,
 		});
 	</script>
+	<!-- JavaScript for sticky navbar functionality and sidebar interaction -->
+    <script>
+		function toggleSidebar() {
+		  var sidebar = document.getElementById('sidebar');
+		  var burgerIcon = document.querySelector('.burger-icon');
+
+		  if (burgerIcon.classList.contains('close')) {
+			sidebar.classList.remove('close');
+			burgerIcon.innerHTML = '&#9776;';
+			burgerIcon.classList.remove('close');
+		  } else {
+			sidebar.classList.add('close');
+			burgerIcon.innerHTML = '&times;';
+			burgerIcon.classList.add('close');
+		  }
+		}
+    </script>
 </body>
 </html>
