@@ -3,6 +3,7 @@
 <head>
     <title>Modern Driving School</title>
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -176,6 +177,18 @@
 			<!-- Add Pagination -->
 			<div class="swiper-pagination"></div>
 		</section>
+	
+		<!-- Reviews Container -->
+		<section class="reviews">
+			<h2>Reviews</h2>
+			<div id="reviews-container">
+				<div class="review-card is-loading">
+				  <div class="description"></div>
+				  <div class="rating"></div>
+				</div>
+			</div>
+		</section>
+	
 		<!-- Social media -->
 		<div class="social-media">
 			<h2>Connect with Us</h2>
@@ -194,6 +207,7 @@
         <!-- Footer content goes here -->
     </footer>
 
+	<!-- JavaScript for cars swiper -->
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script>
 		var swiper = new Swiper('.swiper-container', {
@@ -208,6 +222,7 @@
 			grabCursor: true,
 		});
 	</script>
+
 	<!-- JavaScript for sticky navbar functionality and sidebar interaction -->
     <script>
 		function toggleSidebar() {
@@ -225,5 +240,69 @@
 		  }
 		}
     </script>
+
+	<!-- JavaScript for fetchin superprawojazdy.pl reviews -->
+	<script type="module">
+		import { fetchSuperPrawoJazdyReviews } from './fetchReviews.js';
+
+		// Function to render reviews
+		function renderReviews(reviews) {
+		  const reviewsContainer = document.getElementById('reviews-container');
+
+		  // Clear existing content
+		  reviewsContainer.innerHTML = '';
+
+		  // Loop through each review
+		  reviews.forEach(review => {
+			const reviewCard = document.createElement('div');
+			reviewCard.classList.add('review-card');
+
+			// Author, Date, Rating, and Description
+			reviewCard.innerHTML = `
+			  <div class="author">${review.author}</div>
+			  <div class="date">${review.date}</div>
+			  <div class="rating">&#9733; ${review.rating}</div>
+			  <div class="description">${review.description}</div>
+			`;
+
+			// Pros and Cons
+			if (review.pros.length > 0 || review.cons.length > 0) {
+			  const prosConsElement = document.createElement('div');
+			  prosConsElement.classList.add('pros-cons');
+
+			  // Pros
+			  if (review.pros.length > 0) {
+				const prosElement = document.createElement('div');
+				prosElement.classList.add('pros');
+				prosElement.innerHTML = `<i class="fas fa-thumbs-up"></i> ${review.pros.join(', ')}`;
+				prosConsElement.appendChild(prosElement);
+			  }
+
+			  // Cons
+			  if (review.cons.length > 0) {
+				const consElement = document.createElement('div');
+				consElement.classList.add('cons');
+				consElement.innerHTML = `<i class="fas fa-thumbs-down"></i> ${review.cons.join(', ')}`;
+				prosConsElement.appendChild(consElement);
+			  }
+
+			  reviewCard.appendChild(prosConsElement);
+			}
+
+			reviewsContainer.appendChild(reviewCard);
+		  });
+		}
+	
+		const url = 'https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm';
+		const reviews = await fetchSuperPrawoJazdyReviews(url);
+		renderReviews(reviews.slice(0, 3));
+
+		const loadMore = document.createElement('a');
+		loadMore.classList.add('load-more-btn');
+		loadMore.innerHTML = 'Load More Reviews';
+		loadMore.href = url;
+		loadMore.target = '_blank';
+		document.getElementById('reviews-container').appendChild(loadMore);
+	</script>
 </body>
 </html>
