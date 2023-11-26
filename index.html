@@ -148,7 +148,7 @@
 		<!-- Cars gallery -->
 		<div class="container cars">
 			<h2 class="section-header">Available Cars</h2>
-			<div id="cars" class="swiper-container">
+			<div class="swiper-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
 						<div class="card">
@@ -183,12 +183,16 @@
 		<!-- Reviews Container -->
 		<div class="container reviews">
 			<h2 class="section-header">Reviews</h2>
-			<div id="reviews-container">
-				<div class="review-card is-loading">
-				  <div class="description"></div>
-				  <div class="rating"></div>
+			<div class="swiper-container">
+				<div id="reviews-container" class="swiper-wrapper">
+					<div class="review-card is-loading">
+					  <div class="description"></div>
+					  <div class="rating"></div>
+					</div>
 				</div>
 			</div>
+			<!-- Add Pagination -->
+			<div class="swiper-pagination"></div>
 		</div>
 	
 		<!-- Social media -->
@@ -212,15 +216,30 @@
 	<!-- JavaScript for cars swiper -->
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script>
-		var swiper = new Swiper('.swiper-container', {
+		// Cars swiper
+		var carsSwiper = new Swiper('.cars .swiper-container', {
 			slidesPerView: 'auto',
 			initialSlide: 0,
 			spaceBetween: 100,
 			centeredSlides: true,
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.cars .swiper-pagination',
 				clickable: true,
 			},
+			grabCursor: true,
+		});
+
+		// Reviews swiper
+		var reviewsSwiper = new Swiper('.reviews .swiper-container', {
+			slidesPerView: 'auto',
+			initialSlide: 0,
+			spaceBetween: 100,
+			centeredSlides: true,
+			pagination: {
+				el: '.reviews .swiper-pagination',
+				clickable: true,
+			},
+			effect: 'cards',
 			grabCursor: true,
 		});
 	</script>
@@ -248,14 +267,7 @@
 		import { fetchSuperPrawoJazdyReviews } from './fetchReviews.js';
 
 		// Function to render reviews
-		function renderReviews(reviews) {
-		  const reviewsContainer = document.getElementById('reviews-container');
-
-		  // Clear existing content
-		  reviewsContainer.innerHTML = '';
-
-		  // Loop through each review
-		  reviews.forEach(review => {
+		function renderReview(review) {
 			const reviewCard = document.createElement('div');
 			reviewCard.classList.add('review-card');
 
@@ -291,20 +303,37 @@
 			  reviewCard.appendChild(prosConsElement);
 			}
 
-			reviewsContainer.appendChild(reviewCard);
-		  });
+			return reviewCard
+		}
+
+		function renderSwiperSlide(content) {
+		    const swiperSlide = document.createElement('div');
+			swiperSlide.classList.add('swiper-slide');
+			swiperSlide.appendChild(content);
+			return swiperSlide;
 		}
 	
 		const url = 'https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm';
 		const reviews = await fetchSuperPrawoJazdyReviews(url);
-		renderReviews(reviews.slice(0, 3));
+
+		const reviewsContainer = document.getElementById('reviews-container');
+		// Clear existing content
+		reviewsContainer.innerHTML = '';
+		// Loop through each review
+		reviews.slice(0, 3)
+			.map(review => renderReview(review))
+			.map(review => renderSwiperSlide(review))
+			.forEach(review => reviewsContainer.appendChild(review));
 
 		const loadMore = document.createElement('a');
 		loadMore.classList.add('load-more-btn');
 		loadMore.innerHTML = 'Load More Reviews';
 		loadMore.href = url;
 		loadMore.target = '_blank';
-		document.getElementById('reviews-container').appendChild(loadMore);
+		const loadMoreCard = document.createElement('div');
+		loadMoreCard.classList.add('review-card', 'load-more-card');
+		loadMoreCard.appendChild(loadMore);
+		reviewsContainer.appendChild(renderSwiperSlide(loadMoreCard));
 	</script>
 </body>
 </html>
