@@ -29,17 +29,17 @@
 	<!-- Homepage -->
 	<section id="home">
 		<!-- Banner -->
-		<div class="homepage-content">
+		<div class="container homepage-content">
 			<img src="/assets/photo.jpg" alt="Driving School Image">
 			<div class="homepage-text">
-				<h1>Welcome to Modern Driving School</h1>
+				<h1 class="section-header">Welcome to Modern Driving School</h1>
 				<p>Your journey to safe and confident driving starts here. Join us today!</p>
 				<a href="#courses" class="cta-button">Learn More</a>
 			</div>
 		</div>
 		<!-- Promo video -->
-		<div class="mobile-friendly-videos">
-			<h2>Mobile-Friendly Videos</h2>
+		<div class="container mobile-friendly-videos">
+			<h2 class="section-header">Mobile-Friendly Videos</h2>
 			<p>If you have promotional videos or instructional content, we've got you covered. Check out our videos:</p>
 			<video autoplay loop muted playsinline width="100%">
 				<source src="/assets/video.mp4" type="video/mp4">
@@ -47,8 +47,8 @@
 			</video>
 		</div>
 		<!-- Events -->
-		<div class="events">
-			<h2>Events</h2>
+		<div class="container events">
+			<h2 class="section-header">Events</h2>
 			<div class="calendar">
 				<div class="calendar-left">
 					<div class="num-date">23</div>
@@ -146,52 +146,54 @@
 		</div>
 		<!-- events -->
 		<!-- Cars gallery -->
-		<h2>Available Cars</h2>
-		<section id="cars" class="swiper-container">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div class="card">
-						<img src="/assets/car1.png" alt="Car 1">
-						<h3>Car Model 1</h3>
-						<p>Price: $X,XXX per hour</p>
-						<p>Features: Feature 1, Feature 2, Feature 3</p>
+		<div class="container cars">
+			<h2 class="section-header">Available Cars</h2>
+			<div id="cars" class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="card">
+							<img src="/assets/car1.png" alt="Car 1">
+							<h3>Car Model 1</h3>
+							<p>Price: $X,XXX per hour</p>
+							<p>Features: Feature 1, Feature 2, Feature 3</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card">
+							<img src="/assets/car2.png" alt="Car 1">
+							<h3>Car Model 2</h3>
+							<p>Price: $X,XXX per hour</p>
+							<p>Features: Feature 1, Feature 2, Feature 3</p>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="card">
+							<img src="/assets/car3.png" alt="Car 1">
+							<h3>Car Model 3</h3>
+							<p>Price: $X,XXX per hour</p>
+							<p>Features: Feature 1, Feature 2, Feature 3</p>
+						</div>
 					</div>
 				</div>
-				<div class="swiper-slide">
-					<div class="card">
-						<img src="/assets/car2.png" alt="Car 1">
-						<h3>Car Model 2</h3>
-						<p>Price: $X,XXX per hour</p>
-						<p>Features: Feature 1, Feature 2, Feature 3</p>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="card">
-						<img src="/assets/car3.png" alt="Car 1">
-						<h3>Car Model 3</h3>
-						<p>Price: $X,XXX per hour</p>
-						<p>Features: Feature 1, Feature 2, Feature 3</p>
-					</div>
-				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
 			</div>
-			<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
-		</section>
+		</div>
 	
 		<!-- Reviews Container -->
-		<section class="reviews">
-			<h2>Reviews</h2>
+		<div class="container reviews">
+			<h2 class="section-header">Reviews</h2>
 			<div id="reviews-container">
 				<div class="review-card is-loading">
 				  <div class="description"></div>
 				  <div class="rating"></div>
 				</div>
 			</div>
-		</section>
+		</div>
 	
 		<!-- Social media -->
-		<div class="social-media">
-			<h2>Connect with Us</h2>
+		<div class="container social-media">
+			<h2 class="section-header">Connect with Us</h2>
 			<br/>
 			<p>Follow us on social media for updates, tips, and more:</p>
 			<br/>
