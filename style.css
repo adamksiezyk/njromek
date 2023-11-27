@@ -396,6 +396,7 @@ footer {
 .swiper-slide {
 	width: auto !important;
     text-align: center;
+	user-select: none;
 }
 
 .swiper-pagination {
@@ -410,6 +411,7 @@ footer {
 
 .review-card {
   background-color: white;
+  border: 1px solid #dddd;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -465,28 +467,27 @@ footer {
   background-color: #f9e8e8;
 }
 
-/* Load More Button Styles */
-.load-more-btn {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  text-decoration: none;
+.preview {
+	color: black;
+	text-decoration: none;
 }
 
-.load-more-card {
-	min-height: 300px;
-	display: flex;
-	justify-content: center;
-    align-items: center;
+.preview-image {
+	max-width: 100%;
+	max-height: 200px;
+	margin-bottom: 10px;
 }
 
-.load-more-btn:hover {
-  background-color: #2980b9;
+.preview-title {
+	font-weight: bold;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.preview-description {
+	text-align: justify;
+    opacity: 0.5;
+    font-size: 0.8em;
 }
 
 .is-loading {

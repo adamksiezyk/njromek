@@ -264,7 +264,7 @@
 
 	<!-- JavaScript for fetchin superprawojazdy.pl reviews -->
 	<script type="module">
-		import { fetchSuperPrawoJazdyReviews } from './fetchReviews.js';
+		import { fetchPreview, fetchSuperPrawoJazdyReviews } from './fetchReviews.js';
 
 		// Function to render reviews
 		function renderReview(review) {
@@ -306,6 +306,37 @@
 			return reviewCard
 		}
 
+		function renderPreview(preview) {
+			const previewCard = document.createElement('div');
+			previewCard.classList.add('review-card');
+
+			// Create elements to display the preview
+			if (preview.imageUrl) {
+				const imageElement = document.createElement('img');
+				imageElement.classList.add('preview-image');
+				imageElement.src = preview.imageUrl;
+				imageElement.alt = 'Preview Image';
+			    previewCard.appendChild(imageElement);
+			}
+
+			const titleElement = document.createElement('p');
+			titleElement.classList.add('preview-title');
+			titleElement.innerText = preview.title;
+			previewCard.appendChild(titleElement);
+
+			const descriptionElement = document.createElement('p');
+			descriptionElement.classList.add('preview-description');
+			descriptionElement.innerText = preview.description;
+			previewCard.appendChild(descriptionElement);
+
+			const loadMore = document.createElement('a');
+			loadMore.classList.add('preview');
+			loadMore.href = url;
+			loadMore.target = '_blank';
+			loadMore.appendChild(previewCard);
+			return loadMore;
+		}
+
 		function renderSwiperSlide(content) {
 		    const swiperSlide = document.createElement('div');
 			swiperSlide.classList.add('swiper-slide');
@@ -324,16 +355,13 @@
 			.map(review => renderReview(review))
 			.map(review => renderSwiperSlide(review))
 			.forEach(review => reviewsContainer.appendChild(review));
-
-		const loadMore = document.createElement('a');
-		loadMore.classList.add('load-more-btn');
-		loadMore.innerHTML = 'Load More Reviews';
-		loadMore.href = url;
-		loadMore.target = '_blank';
-		const loadMoreCard = document.createElement('div');
-		loadMoreCard.classList.add('review-card', 'load-more-card');
-		loadMoreCard.appendChild(loadMore);
-		reviewsContainer.appendChild(renderSwiperSlide(loadMoreCard));
+		// Preview
+		const preview = await fetchPreview(url);
+		const previewCard = renderPreview(preview);
+		const previewSlide = renderSwiperSlide(previewCard);
+		reviewsContainer.appendChild(previewSlide);
+	</script>
+	<script type="module">
 	</script>
 </body>
 </html>
