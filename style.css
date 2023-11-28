@@ -357,7 +357,7 @@ footer {
 /* Cars */
 
 .cars .swiper-wrapper {
-	width: 2000px;
+	width: 2600px;
 }
 
 .card {
@@ -381,10 +381,6 @@ footer {
 .card p {
     color: #666;
     margin: 5px 0;
-}
-
-.card:hover {
-    transform: scale(1.05);
 }
 
 /* Add Swiper styles */
