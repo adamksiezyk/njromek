@@ -130,19 +130,19 @@ footer {
 
 .homepage-content {
     display: flex;
-	flex-direction: column-reverse;
     justify-content: center;
     align-items: center;
     text-align: left;
 }
 
 .homepage-content img {
-    max-width: 1000px;
+    max-width: 650px;
 	width: 100%;
     height: auto;
 }
 
 .homepage-text {
+	min-width: 560px;
     padding: 50px;
 }
 
@@ -154,6 +154,12 @@ footer {
 .homepage-text p {
     color: #666;
     margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+	.homepage-content {
+		flex-direction: column;
+	}
 }
 
 /* Mobile friendly video */
