@@ -11,12 +11,18 @@
 	<!-- Navbar -->
     <header id="navbar">
 		<div class="burger-icon" onclick="toggleSidebar()">&#9776;</div>
-		<a href="#home">Home</a>
-		<a href="#courses">Courses</a>
-		<a href="#pricing">Pricing</a>
-		<a href="#about">About Us</a>
-		<a href="#contact">Contact</a>
-		<a href="#blog">Blog</a>
+		<div class="logo-container">
+			<img src="/assets/logo_simple.png" alt="Logo" height="50" />
+		</div>
+		<div id="nav">
+			<a href="#home">Home</a>
+			<a href="#courses">Courses</a>
+			<a href="#pricing">Pricing</a>
+			<a href="#about">About Us</a>
+			<a href="#contact">Contact</a>
+			<a href="#blog">Blog</a>
+		</div>
+		<div style="margin-right: 0; margin-left: auto; padding: 16px;"><a href="#courses" class="enroll">Zapisz się</a></div>
     </header>
 	<!-- Sidebar -->
 	<div class="sidebar" id="sidebar">
@@ -251,15 +257,18 @@
 		function toggleSidebar() {
 		  var sidebar = document.getElementById('sidebar');
 		  var burgerIcon = document.querySelector('.burger-icon');
+		  var logoContainer = document.querySelector('.logo-container');
 
 		  if (burgerIcon.classList.contains('close')) {
 			sidebar.classList.remove('close');
 			burgerIcon.innerHTML = '&#9776;';
 			burgerIcon.classList.remove('close');
+			logoContainer.classList.remove('close');
 		  } else {
 			sidebar.classList.add('close');
 			burgerIcon.innerHTML = '&times;';
 			burgerIcon.classList.add('close');
+			logoContainer.classList.add('close');
 		  }
 		}
     </script>
