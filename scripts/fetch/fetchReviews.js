@@ -1,31 +1,25 @@
-// Function to fetch HTML content from the URL using CORS
-export async function fetchHTML(url) {
-	const corsAnywhereURL = 'https://corsproxy.io/?';
-	const targetURL = corsAnywhereURL + url;
-	try {
-		const response = await fetch(targetURL);
-		return await response.text();
-	} catch (error) {
-		console.error('Error fetching HTML:', error);
-		return null;
-	}
+import { fetchHTML } from './fetch.js';
+
+// Function to fetch data from superprawojazdy and extract reviews
+export async function fetchSuperPrawoJazdyReviews(url) {
+	const html = await fetchHTML(url);
+	return await extractSuperProwoJazdyReviews(html);
 }
 
 // Function to extract reviews from HTML block and return as JSON
-export async function extractSuperProwoJazdyReviews(html) {
+// Returns an ordered descending by date array of reviews JSONs
+async function extractSuperProwoJazdyReviews(html) {
 	const reviews = [];
 
 	// Use DOMParser to parse only the relevant parts of the HTML
 	const parser = new DOMParser();
 	const doc = parser.parseFromString(html, 'text/html');
 
-	// Use the same extraction logic as before
 	const container = doc.querySelector('#opinionlist');
 
 	// Select all review items within the container
 	const reviewItems = container.querySelectorAll('.company-details-comments-item');
 
-	// Iterate through each review item
 	reviewItems.forEach((item) => {
 		const review = {};
 
@@ -58,40 +52,13 @@ export async function extractSuperProwoJazdyReviews(html) {
 		review.cons = consElement
 			? Array.from(consElement.querySelectorAll('span')).map((span) => span.textContent.replace(',', '').trim())
 			: [];
-
-		// Add the review to the array
 		reviews.push(review);
 	});
 
-	// Return the reviews as JSON
 	return orderReviewsByDateDescending(reviews);
 }
 
 // Function to order reviews by date in descending order
 function orderReviewsByDateDescending(reviews) {
 	return reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
-}
-
-// Function to fetch data from superprawojazdy and extract reviews
-export async function fetchSuperPrawoJazdyReviews(url) {
-	const html = await fetchHTML(url);
-	return await extractSuperProwoJazdyReviews(html);
-}
-
-export async function fetchPreview(url) {
-	// Read the response as text
-	const html = await fetchHTML(url);
-
-	// Create a temporary element to parse the HTML
-	const parser = new DOMParser();
-	const doc = parser.parseFromString(html, 'text/html');
-
-	// Get the title and meta tags from the parsed HTML
-	const title = doc.querySelector('title').innerText;
-	const metaDescription = doc.querySelector('meta[name="description"]');
-	const description = metaDescription ? metaDescription.content : '';
-	const ogImage = doc.querySelector('meta[property="og:image"]');
-	const imageUrl = ogImage ? ogImage.content : '';
-
-	return { title, description, imageUrl };
 }

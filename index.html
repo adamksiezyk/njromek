@@ -221,7 +221,10 @@
         <!-- Footer content goes here -->
     </footer>
 
-	<!-- JavaScript for cars swiper -->
+	<!-- JavaScript for sidebar interaction -->
+	<script src="./scripts/animation/sidebar.js"></script>
+
+	<!-- JavaScript for swiper -->
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script>
 		// Cars swiper
@@ -252,127 +255,31 @@
 		});
 	</script>
 
-	<!-- JavaScript for sticky navbar functionality and sidebar interaction -->
-    <script>
-		function toggleSidebar() {
-		  var sidebar = document.getElementById('sidebar');
-		  var burgerIcon = document.querySelector('.burger-icon');
-		  var logoContainer = document.querySelector('.logo-container');
-
-		  if (burgerIcon.classList.contains('close')) {
-			sidebar.classList.remove('close');
-			burgerIcon.innerHTML = '&#9776;';
-			burgerIcon.classList.remove('close');
-			logoContainer.classList.remove('close');
-		  } else {
-			sidebar.classList.add('close');
-			burgerIcon.innerHTML = '&times;';
-			burgerIcon.classList.add('close');
-			logoContainer.classList.add('close');
-		  }
-		}
-    </script>
-
-	<!-- JavaScript for fetchin superprawojazdy.pl reviews -->
+	<!-- JavaScript for fetching superprawojazdy.pl reviews -->
 	<script type="module">
-		import { fetchPreview, fetchSuperPrawoJazdyReviews } from './fetchReviews.js';
+		import { fetchSuperPrawoJazdyReviews } from './scripts/fetch/fetchReviews.js';
+		import { fetchPreview } from './scripts/fetch/fetch.js';
+		import { renderSuperPrawoJazdyReview } from './scripts/render/renderReview.js';
+		import { renderPreview } from './scripts/render/renderPreview.js';
+		import { renderSwiperSlide } from './scripts/render/renderSwiper.js';
 
-		// Function to render reviews
-		function renderReview(review) {
-			const reviewCard = document.createElement('div');
-			reviewCard.classList.add('review-card');
-
-			// Author, Date, Rating, and Description
-			reviewCard.innerHTML = `
-			  <div class="author">${review.author}</div>
-			  <div class="date">${review.date}</div>
-			  <div class="rating">&#9733; ${review.rating}</div>
-			  <div class="description">${review.description}</div>
-			`;
-
-			// Pros and Cons
-			if (review.pros.length > 0 || review.cons.length > 0) {
-			  const prosConsElement = document.createElement('div');
-			  prosConsElement.classList.add('pros-cons');
-
-			  // Pros
-			  if (review.pros.length > 0) {
-				const prosElement = document.createElement('div');
-				prosElement.classList.add('pros');
-				prosElement.innerHTML = `<i class="fas fa-thumbs-up"></i> ${review.pros.join(', ')}`;
-				prosConsElement.appendChild(prosElement);
-			  }
-
-			  // Cons
-			  if (review.cons.length > 0) {
-				const consElement = document.createElement('div');
-				consElement.classList.add('cons');
-				consElement.innerHTML = `<i class="fas fa-thumbs-down"></i> ${review.cons.join(', ')}`;
-				prosConsElement.appendChild(consElement);
-			  }
-
-			  reviewCard.appendChild(prosConsElement);
-			}
-
-			return reviewCard
-		}
-
-		function renderPreview(preview) {
-			const previewCard = document.createElement('div');
-			previewCard.classList.add('review-card');
-
-			// Create elements to display the preview
-			if (preview.imageUrl) {
-				const imageElement = document.createElement('img');
-				imageElement.classList.add('preview-image');
-				imageElement.src = preview.imageUrl;
-				imageElement.alt = 'Preview Image';
-			    previewCard.appendChild(imageElement);
-			}
-
-			const titleElement = document.createElement('p');
-			titleElement.classList.add('preview-title');
-			titleElement.innerText = preview.title;
-			previewCard.appendChild(titleElement);
-
-			const descriptionElement = document.createElement('p');
-			descriptionElement.classList.add('preview-description');
-			descriptionElement.innerText = preview.description;
-			previewCard.appendChild(descriptionElement);
-
-			const loadMore = document.createElement('a');
-			loadMore.classList.add('preview');
-			loadMore.href = url;
-			loadMore.target = '_blank';
-			loadMore.appendChild(previewCard);
-			return loadMore;
-		}
-
-		function renderSwiperSlide(content) {
-		    const swiperSlide = document.createElement('div');
-			swiperSlide.classList.add('swiper-slide');
-			swiperSlide.appendChild(content);
-			return swiperSlide;
-		}
-	
 		const url = 'https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm';
 		const reviews = await fetchSuperPrawoJazdyReviews(url);
 
 		const reviewsContainer = document.getElementById('reviews-container');
 		// Clear existing content
 		reviewsContainer.innerHTML = '';
-		// Loop through each review
+
+		// Render reviews
 		reviews.slice(0, 3)
-			.map(review => renderReview(review))
+			.map(review => renderSuperPrawoJazdyReview(review))
 			.map(review => renderSwiperSlide(review))
 			.forEach(review => reviewsContainer.appendChild(review));
-		// Preview
+		// Render preview
 		const preview = await fetchPreview(url);
-		const previewCard = renderPreview(preview);
+		const previewCard = renderPreview(preview, url);
 		const previewSlide = renderSwiperSlide(previewCard);
 		reviewsContainer.appendChild(previewSlide);
-	</script>
-	<script type="module">
 	</script>
 </body>
 </html>
