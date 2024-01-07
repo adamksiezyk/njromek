@@ -5,228 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Apply some basic styling */
-body {
-	font-family: 'acumin-pro',sans-serif;
-    font-size: 24px;
+#burger-icon.close {
+  padding-left: 200px;
 }
 
-/* Navbar styles */
-#navbar {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	background-color: rgba(255, 255, 255, 0.9);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #ddd;
-	text-align: center;
-}
-
-#navbar #nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#navbar a {
-  display: inline-block;
-  padding: 14px 16px;
-  color: #333;
-  text-align: center;
-  text-decoration: none;
-}
-
-#navbar .enroll {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-/* Logo styles */
-.logo-container {
-  margin: 16px;
-  transition: all 0.5s;
- }
-
-.logo-container.close {
-  margin-left: 196px;
- }
-
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Burger icon styles */
-.burger-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5em;
-  padding: 15px;
-  position: relative;
-  left: 20px;
-  padding-right: 40px;
-  transition: left 0.5s; /* Transition for left property */
-}
-
-.burger-icon.close {
-  left: 180px; /* Adjust as needed */
-}
-
-/* Sidebar styles */
-.sidebar {
-  height: 100%;
-  width: 0;
-  padding-top: 100px;
-  padding-left: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar.close {
+#sidebar.close {
   width: 250px;
   padding-left: 20px;
-}
-
-.sidebar a {
-  padding: 15px;
-  text-decoration: none;
-  color: #333;
-  display: block;
-  text-align: left;
-}
-
-.sidebar a:hover {
-  background-color: #ddd;
-}
-
-/* Media query for mobile */
-@media screen and (max-width: 992px) {
-  #navbar {
-	justify-content: left;
-  }
-
-  #navbar a {
-	display: none;
-  }
-
-  .burger-icon {
-	display: inline-block;
-  }
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-/* Homepage */
-/* ... Previous CSS code ... */
-#home {
-	padding-top: 100px;
-    background-color: #f0f0f0;
-    text-align: center;
-}
-
-.container {
-	margin-bottom: 100px;
-	padding: 0 20px;
-}
-
-.container:last-of-type {
-	margin-bottom: 0;
-}
-
-.section-header {
-	margin-bottom: 20px;
-}
-
-.homepage-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-}
-
-.homepage-content img {
-    max-width: 650px;
-	width: 100%;
-    height: auto;
-}
-
-.homepage-text {
-	min-width: 560px;
-    padding: 50px;
-}
-
-.homepage-text h1 {
-	font-size: 4.4rem;
-    color: #333;
-}
-
-.homepage-text p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-@media screen and (max-width: 1200px) {
-	.homepage-content {
-		flex-direction: column;
-	}
-}
-
-/* Mobile friendly video */
-.mobile-friendly-videos {
-    background-color: #f0f0f0;
-    text-align: center;
-    color: #333;
-}
-
-.mobile-friendly-videos p {
-    margin-bottom: 20px;
-}
-
-/* Style the video container */
-.mobile-friendly-videos video {
-    width: 100%;
-    max-width: 1000px;
-    display: block;
-    margin: 0 auto;
-    border: 2px solid #666;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #555;
 }
 
 /* Events */
@@ -330,6 +115,7 @@ footer {
 	color: white;
 	line-height: 45px;
 	font-weight: bold;
+	text-align: center;
 }
 
 .grey {
@@ -387,35 +173,6 @@ footer {
 		padding: 20px;
 		border-radius: 0 0 20px 20px;
 	}
-}
-
-/* Cars */
-
-.cars .swiper-wrapper {
-	width: 2600px;
-}
-
-.card {
-    width: 600px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s;
-}
-
-.card img {
-    max-width: 100%;
-    height: auto;
-}
-
-.card h3 {
-    margin: 10px 0;
-}
-
-.card p {
-    color: #666;
-    margin: 5px 0;
 }
 
 /* Add Swiper styles */
