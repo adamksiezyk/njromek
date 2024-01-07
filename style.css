@@ -5,135 +5,13 @@
     box-sizing: border-box;
 }
 
-/* Apply some basic styling */
-body {
-	font-family: 'acumin-pro',sans-serif;
-    font-size: 24px;
+#burger-icon.close {
+  padding-left: 200px;
 }
 
-/* Navbar styles */
-#navbar {
-	position: fixed;
-	width: 100%;
-	top: 0;
-	z-index: 1000;
-	display: flex;
-	align-items: center;
-	background-color: rgba(255, 255, 255, 0.9);
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid #ddd;
-	text-align: center;
-}
-
-#navbar #nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-#navbar a {
-  display: inline-block;
-  padding: 14px 16px;
-  color: #333;
-  text-align: center;
-  text-decoration: none;
-}
-
-#navbar .enroll {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-/* Logo styles */
-.logo-container {
-  margin: 16px;
-  transition: all 0.5s;
- }
-
-.logo-container.close {
-  margin-left: 196px;
- }
-
-.logo {
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #333;
-}
-
-/* Burger icon styles */
-.burger-icon {
-  display: none;
-  cursor: pointer;
-  font-size: 1.5em;
-  padding: 15px;
-  position: relative;
-  left: 20px;
-  padding-right: 40px;
-  transition: left 0.5s; /* Transition for left property */
-}
-
-.burger-icon.close {
-  left: 180px; /* Adjust as needed */
-}
-
-/* Sidebar styles */
-.sidebar {
-  height: 100%;
-  width: 0;
-  padding-top: 100px;
-  padding-left: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.9);
-  overflow-x: hidden;
-  transition: 0.5s;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.sidebar.close {
+#sidebar.close {
   width: 250px;
   padding-left: 20px;
-}
-
-.sidebar a {
-  padding: 15px;
-  text-decoration: none;
-  color: #333;
-  display: block;
-  text-align: left;
-}
-
-.sidebar a:hover {
-  background-color: #ddd;
-}
-
-/* Media query for mobile */
-@media screen and (max-width: 992px) {
-  #navbar {
-	justify-content: left;
-  }
-
-  #navbar a {
-	display: none;
-  }
-
-  .burger-icon {
-	display: inline-block;
-  }
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
 }
 
 /* Homepage */
