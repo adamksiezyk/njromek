@@ -298,15 +298,3 @@
     background-position-x: -200%;
   }
 }
-
-/* Social media */
-.social-media {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #fff;
-}
-
-.social-icons img {
-    width: 40px;
-    margin: 0 10px;
-}
