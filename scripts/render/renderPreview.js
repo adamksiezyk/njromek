@@ -1,6 +1,6 @@
 export function renderPreview(preview, url) {
 	const previewCard = document.createElement('div');
-	previewCard.classList.add('review-card');
+	previewCard.classList.add('review-card', 'text-gray-900', 'bg-white', 'rounded-lg', 'border', 'border-gray-100', 'shadow', 'dark:border-gray-600', 'w-[768px]', 'p-5', 'dark:bg-gray-800', 'dark:text-white');
 
 	// Create elements to display the preview
 	if (preview.imageUrl) {

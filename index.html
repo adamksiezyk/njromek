@@ -13,11 +13,10 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script type="module">
 		tailwind.config = {
-		  darkMode: 'class',
 		  theme: {
 			extend: {
 			  colors: {
-				primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"}
+				primary: {"600": "#168bd5"}
 			  }
 			},
 			fontFamily: {
@@ -29,44 +28,45 @@
 </head>
 <body class="font-acumin-pro text-2xl">
 	<!-- Navbar -->
-    <header class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white border-b-2 border-gray-300 shadow">
+    <header class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white dark:bg-gray-800 dark:text-white border-b-2 border-gray-300 dark:border-gray-600 shadow">
 		<div id="burger-icon" class="block lg:hidden relative px-7 text-4xl cursor-pointer duration-500" onclick="toggleSidebar()">&#9776;</div>
 		<div class="pl-3">
-			<img src="/assets/logo_simple.png" alt="Logo" class="h-12" />
+			<img src="/assets/logo_simple.png" alt="Logo" class="h-12 block dark:hidden" />
+			<img src="/assets/logo_simple_dark.png" alt="Logo" class="h-12 hidden dark:block" />
 		</div>
 		<div>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#home">Home</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#courses">Courses</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#pricing">Pricing</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#about">About Us</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#contact">Contact</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 text-center no-underline" href="#blog">Blog</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#home">Home</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#courses">Courses</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#pricing">Pricing</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#about">About Us</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#contact">Contact</a>
+			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#blog">Blog</a>
 		</div>
 		<div class="pr-3 ml-auto mr-0 lg:m-0">
-			<a href="#courses" class="inline-block py-2 px-3 bg-gray-900 text-white no-underline rounded font-bold duration-300">Zapisz się</a>
+			<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Zapisz się</a>
 		</div>
     </header>
 	<!-- Sidebar -->
-	<div id="sidebar" class="h-full w-0 pt-8 pl-0 fixed top-0 left-0 overflow-x-hidden bg-slate-50 shadow-md duration-500">
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#home">Home</a>
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#courses">Courses</a>
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#pricing">Pricing</a>
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#about">About Us</a>
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#contact">Contact</a>
-		<a class="block p-4 no-underline text-gray-900 text-left" href="#blog">Blog</a>
+	<div id="sidebar" class="h-full w-0 pt-8 pl-0 fixed top-0 left-0 overflow-x-hidden bg-slate-50 dark:bg-gray-800 shadow-md duration-500">
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#home">Home</a>
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#courses">Courses</a>
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#pricing">Pricing</a>
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#about">About Us</a>
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#contact">Contact</a>
+		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#blog">Blog</a>
   	</div>
 	<!-- Homepage -->
-	<section class="bg-gray-100">
+	<section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
 		<!-- Banner -->
 		<div class="container w-full mx-auto mb-20 py-40 lg:py-20 text-center">
 			<div class="flex justify-center items-center flex-col lg:flex-row">
 				<div class="lg:w-3/5 px-8 text-center lg:text-left">
-					<h1 class="text-6xl font-bold text-gray-800 mb-5">Nauka Jazdy Romek</h1>
+					<h1 class="text-6xl font-bold text-gray-800 dark:text-white mb-5">Nauka Jazdy Romek</h1>
 					<div class="px-5 mb-5 text-left">
-						<p class="text-gray-600">al. Jana Pawła II 36/12a Kędzierzyn-Koźle</p>
-						<p class="text-gray-600">Tel. 603 093 024</p>
+						<p class="text-gray-600 dark:text-gray-300">al. Jana Pawła II 36/12a Kędzierzyn-Koźle</p>
+						<p class="text-gray-600 dark:text-gray-300">Tel. 603 093 024</p>
 					</div>
-					<a href="#courses" class="inline-block py-2 px-3 bg-gray-900 text-white no-underline rounded font-bold duration-300">Learn More</a>
+					<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Learn More</a>
 				</div>
 				<img class="max-w-3xl w-full h-auto" src="/assets/banner.png" alt="Driving School Image">
 			</div>
@@ -301,22 +301,22 @@
 			<div class="swiper-container">
 				<div class="swiper-wrapper w-[2600px]">
 					<div class="swiper-slide">
-						<div class="w-600 border border-solid border-gray-300 rounded-lg p-5 shadow-md transition-transform duration-200">
+						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
 							<img src="/assets/clio_red_front_left_crop-removebg.png" alt="Car 1">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="w-600 border border-solid border-gray-300 rounded-lg p-5 shadow-md transition-transform duration-200">
+						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
 							<img src="/assets/clio_red_rear_left_crop-removebg.png" alt="Car 1">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="w-600 border border-solid border-gray-300 rounded-lg p-5 shadow-md transition-transform duration-200">
+						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
 							<img src="/assets/clio_red_rear_crop-removebg.png" alt="Car 1">
 						</div>
 					</div>
 					<div class="swiper-slide">
-						<div class="w-600 border border-solid border-gray-300 rounded-lg p-5 shadow-md transition-transform duration-200">
+						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
 							<img src="/assets/clio_red_interior_crop-removebg.png" alt="Car 1">
 						</div>
 					</div>

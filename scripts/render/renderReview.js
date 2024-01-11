@@ -1,7 +1,7 @@
 // Function to render reviews
 export function renderSuperPrawoJazdyReview(review) {
 	const reviewCard = document.createElement('div');
-	reviewCard.classList.add('review-card');
+	reviewCard.classList.add('review-card', 'text-gray-900', 'bg-white', 'rounded-lg', 'border', 'border-gray-100', 'shadow', 'dark:border-gray-600', 'w-[768px]', 'p-5', 'dark:bg-gray-800', 'dark:text-white');
 
 	// Author, Date, Rating, and Description
 	reviewCard.innerHTML = `
