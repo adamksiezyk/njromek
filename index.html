@@ -13,6 +13,7 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script type="module">
 		tailwind.config = {
+		  darkMode: 'class',
 		  theme: {
 			extend: {
 			  colors: {
@@ -58,15 +59,16 @@
 	<!-- Homepage -->
 	<section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
 		<!-- Banner -->
-		<div class="container w-full mx-auto mb-20 py-40 lg:py-20 text-center">
+		<div class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center">
 			<div class="flex justify-center items-center flex-col lg:flex-row">
 				<div class="lg:w-3/5 px-8 text-center lg:text-left">
 					<h1 class="text-6xl font-bold text-gray-800 dark:text-white mb-5">Nauka Jazdy Romek</h1>
 					<div class="px-5 mb-5 text-left">
-						<p class="text-gray-600 dark:text-gray-300">al. Jana Pawła II 36/12a Kędzierzyn-Koźle</p>
-						<p class="text-gray-600 dark:text-gray-300">Tel. 603 093 024</p>
+						<p class="text-gray-600 dark:text-gray-300">al. Jana Pawła II 36/12a</p>
+						<p class="text-gray-600 dark:text-gray-300 mb-2">Kędzierzyn-Koźle</p>
+						<a href="#" class="text-primary-600 dark:text-gray-300 underline">Tel. 603 093 024</a>
 					</div>
-					<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Learn More</a>
+					<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Zapisz się</a>
 				</div>
 				<img class="max-w-3xl w-full h-auto" src="/assets/banner.png" alt="Driving School Image">
 			</div>
@@ -74,7 +76,7 @@
 		<!-- Pricing -->
 		<div class="container mx-auto mb-20">
 			<h2 class="text-center text-6xl font-semibold mb-8">Oferta</h2>
-			<div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+			<div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
 			  <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
 				  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
 				  <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
@@ -200,7 +202,7 @@
 		<!-- Events -->
 		<div class="container mx-auto mb-20 events">
 			<h2 class="text-center text-6xl font-semibold mb-8">Kursy</h2>
-			<div class="calendar">
+			<div class="calendar py-8 lg:py-16">
 				<div class="calendar-left">
 					<div class="num-date my-6 leading-[150px]">23</div>
 					<!--num-date -->
@@ -296,9 +298,9 @@
 		</div>
 		<!-- events -->
 		<!-- Cars gallery -->
-		<div class="container mx-auto mb-20 cars">
+		<div class="container w-full mx-auto mb-20 cars">
 			<h2 class="text-center text-6xl font-semibold mb-8">Pojazdy szkoleniowe</h2>
-			<div class="swiper-container">
+			<div class="swiper-container py-8 lg:py-16">
 				<div class="swiper-wrapper w-[2600px]">
 					<div class="swiper-slide">
 						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
@@ -329,16 +331,18 @@
 		<!-- Reviews Container -->
 		<div class="container mx-auto pb-20 reviews">
 			<h2 class="text-center text-6xl font-semibold mb-8">Co o nas mówią?</h2>
-			<div class="swiper-container">
-				<div id="reviews-container" class="swiper-wrapper">
-					<div class="review-card is-loading">
-					  <div class="description"></div>
-					  <div class="rating"></div>
+			<div class="pt-8 lg:pt-16">
+				<div class="swiper-container">
+					<div id="reviews-container" class="swiper-wrapper">
+						<div class="review-card is-loading">
+						  <div class="description"></div>
+						  <div class="rating"></div>
+						</div>
 					</div>
 				</div>
+				<!-- Add Pagination -->
+				<div class="swiper-pagination"></div>
 			</div>
-			<!-- Add Pagination -->
-			<div class="swiper-pagination"></div>
 		</div>
 	</section>
 
