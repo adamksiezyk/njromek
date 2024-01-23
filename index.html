@@ -1,410 +1,708 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
+  <head>
     <title>Nauka Jazdy Romek Kędzierzyn-Koźle</title>
-	<meta charset="utf-8">
-	<!-- Swiper -->
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-	<!-- Style -->
-    <link rel="stylesheet" type="text/css" href="style.css">
-	<!-- Tailwind CSS -->
-	<script src="https://cdn.tailwindcss.com"></script>
-	<script type="module">
-		tailwind.config = {
-		  darkMode: 'class',
-		  theme: {
-			extend: {
-			  colors: {
-				primary: {"600": "#168bd5"}
-			  }
-			},
-			fontFamily: {
-			  'acumin-pro': ['acumin-pro', 'sans-serif'],
-			}
-		  }
-		}
-	</script>
-</head>
-<body class="font-acumin-pro text-2xl">
-	<!-- Navbar -->
-    <header class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white dark:bg-gray-800 dark:text-white border-b-2 border-gray-300 dark:border-gray-600 shadow">
-		<div id="burger-icon" class="block lg:hidden relative px-7 text-4xl cursor-pointer duration-500" onclick="toggleSidebar()">&#9776;</div>
-		<div class="pl-3">
-			<img src="/assets/logo_simple.png" alt="Logo" class="h-12 block dark:hidden" />
-			<img src="/assets/logo_simple_dark.png" alt="Logo" class="h-12 hidden dark:block" />
-		</div>
-		<div>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#home">Home</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#courses">Courses</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#pricing">Pricing</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#about">About Us</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#contact">Contact</a>
-			<a class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline" href="#blog">Blog</a>
-		</div>
-		<div class="pr-3 ml-auto mr-0 lg:m-0">
-			<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Zapisz się</a>
-		</div>
+    <meta charset="utf-8" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: { 600: "#168bd5" },
+            },
+          },
+          fontFamily: {
+            "acumin-pro": ["acumin-pro", "sans-serif"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-acumin-pro text-2xl">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white dark:bg-gray-800 dark:text-white border-b-2 border-gray-300 dark:border-gray-600 shadow"
+    >
+      <div
+        id="burger-icon"
+        class="block lg:hidden relative px-7 text-4xl cursor-pointer duration-500"
+        onclick="toggleSidebar()"
+      >
+        &#9776;
+      </div>
+      <div class="pl-3">
+        <img
+          src="/assets/logo_simple.png"
+          alt="Logo"
+          class="h-12 block dark:hidden"
+        />
+        <img
+          src="/assets/logo_simple_dark.png"
+          alt="Logo"
+          class="h-12 hidden dark:block"
+        />
+      </div>
+      <div>
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#home"
+          >Home</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#courses"
+          >Courses</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#pricing"
+          >Pricing</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#about"
+          >About Us</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#contact"
+          >Contact</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="#blog"
+          >Blog</a
+        >
+      </div>
+      <div class="pr-3 ml-auto mr-0 lg:m-0">
+        <a
+          href="#courses"
+          class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
+          >Zapisz się</a
+        >
+      </div>
     </header>
-	<!-- Sidebar -->
-	<div id="sidebar" class="h-full w-0 pt-8 pl-0 fixed top-0 left-0 overflow-x-hidden bg-slate-50 dark:bg-gray-800 shadow-md duration-500">
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#home">Home</a>
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#courses">Courses</a>
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#pricing">Pricing</a>
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#about">About Us</a>
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#contact">Contact</a>
-		<a class="block p-4 no-underline text-gray-90 dark:text-white text-left" href="#blog">Blog</a>
-  	</div>
-	<!-- Homepage -->
-	<section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
-		<!-- Banner -->
-		<div class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center">
-			<div class="flex justify-center items-center flex-col lg:flex-row">
-				<div class="lg:w-3/5 px-8 text-center lg:text-left">
-					<h1 class="text-6xl font-bold text-gray-800 dark:text-white mb-5">Nauka Jazdy Romek</h1>
-					<div class="px-5 mb-5 text-left">
-						<p class="text-gray-600 dark:text-gray-300">al. Jana Pawła II 36/12a</p>
-						<p class="text-gray-600 dark:text-gray-300 mb-2">Kędzierzyn-Koźle</p>
-						<a href="#" class="text-primary-600 dark:text-gray-300 underline">Tel. 603 093 024</a>
-					</div>
-					<a href="#courses" class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300">Zapisz się</a>
-				</div>
-				<img class="max-w-3xl w-full h-auto" src="/assets/banner.png" alt="Driving School Image">
-			</div>
-		</div>
-		<!-- Pricing -->
-		<div class="container mx-auto mb-20">
-			<h2 class="text-center text-6xl font-semibold mb-8">Oferta</h2>
-			<div class="mx-auto max-w-screen-xl py-8 px-4 lg:py-16 lg:px-6">
-			  <div class="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-				  <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Designed for business teams like yours</h2>
-				  <p class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400">Here at Flowbite we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth.</p>
-			  </div>
-			  <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
-				  <!-- Pricing Card -->
-				  <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-					  <h3 class="mb-4 text-2xl font-semibold">Starter</h3>
-					  <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best option for personal use & for your next project.</p>
-					  <div class="flex justify-center items-baseline my-8">
-						  <span class="mr-2 text-5xl font-extrabold">$29</span>
-						  <span class="text-gray-500 dark:text-gray-400">/month</span>
-					  </div>
-					  <!-- List -->
-					  <ul role="list" class="mb-8 space-y-4 text-left">
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Individual configuration</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>No setup, or hidden fees</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Team size: <span class="font-semibold">1 developer</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Premium support: <span class="font-semibold">6 months</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Free updates: <span class="font-semibold">6 months</span></span>
-						  </li>
-					  </ul>
-					  <a href="#" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 mt-auto text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-				  </div>
-				  <!-- Pricing Card -->
-				  <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-					  <h3 class="mb-4 text-2xl font-semibold">Company</h3>
-					  <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Relevant for multiple users, extended & premium support.</p>
-					  <div class="flex justify-center items-baseline my-8">
-						  <span class="mr-2 text-5xl font-extrabold">$99</span>
-						  <span class="text-gray-500 dark:text-gray-400">/month</span>
-					  </div>
-					  <!-- List -->
-					  <ul role="list" class="mb-8 space-y-4 text-left">
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Individual configuration</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>No setup, or hidden fees</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Team size: <span class="font-semibold">10 developers</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Premium support: <span class="font-semibold">24 months</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Free updates: <span class="font-semibold">24 months</span></span>
-						  </li>
-					  </ul>
-					  <a href="#" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 mt-auto text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-				  </div>
-				  <!-- Pricing Card -->
-				  <div class="flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
-					  <h3 class="mb-4 text-2xl font-semibold">Enterprise</h3>
-					  <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400">Best for large scale uses and extended redistribution rights.</p>
-					  <div class="flex justify-center items-baseline my-8">
-						  <span class="mr-2 text-5xl font-extrabold">$499</span>
-						  <span class="text-gray-500 dark:text-gray-400">/month</span>
-					  </div>
-					  <!-- List -->
-					  <ul role="list" class="mb-8 space-y-4 text-left">
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Individual configuration</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>No setup, or hidden fees</span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Team size: <span class="font-semibold">100+ developers</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Premium support: <span class="font-semibold">36 months</span></span>
-						  </li>
-						  <li class="flex items-center space-x-3">
-							  <!-- Icon -->
-							  <svg class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-							  <span>Free updates: <span class="font-semibold">36 months</span></span>
-						  </li>
-					  </ul>
-					  <a href="#" class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 mt-auto text-center dark:text-white  dark:focus:ring-primary-900">Get started</a>
-				  </div>
-			  </div>
-		  </div>
-		</div>
-		<!-- Events -->
-		<div class="container mx-auto mb-20 events">
-			<h2 class="text-center text-6xl font-semibold mb-8">Kursy</h2>
-			<div class="calendar py-8 lg:py-16">
-				<div class="calendar-left">
-					<div class="num-date my-6 leading-[150px]">23</div>
-					<!--num-date -->
-					<div class="day mb-4">THURSDAY</div>
-					<!--day -->
-					<div class="current-events text-center">
-						<p>Current Events</p>
-						<p>Day 09 Daily CSS Image</p>
-						<span class="posts">See post events</span>
-					</div>
-					<!--current-events -->
-				</div>
-				<!-- calendar-left -->
-				<div class="calendar-base">
-					<div class="year-container">
-						<div class="triangle triangle-left"></div>
-						<!--triangle -->
-						<div class="year">2023</div>
-						<!-- year -->
-						<div class="triangle triangle-right"></div>
-						<!--  triangle -->
-					</div>
-					<!-- year-container -->
-					<div class="months flex justify-around">
-						<span class="month-hover">Jan</span>
-						<span class="month-hover">Feb</span> 
-						<span class="month-hover">Mar</span> 
-						<span class="month-hover">Apr</span>
-						<span class="month-hover">May</span>
-						<span class="month-hover">Jun</span>
-						<span class="month-hover">July</span> 
-						<span class="month-hover">Aug</span> 
-						<span class="month-hover">Sep</span> 
-						<span class="month-hover">Oct</span> 
-						<strong class="month-color">Nov</strong>
-						<span class="month-hover">Dec</span>
-					</div>
-					<!-- months -->
-					<hr class="month-line" />
-					<div class="grid-container">
-						<div class="days">MON</div>
-						<div class="days">TUE</div>
-						<div class="days">WED</div>
-						<div class="days">THU</div>
-						<div class="days">FRI</div>
-						<div class="days">SAT</div>
-						<div class="days">SUN</div>
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="h-full w-0 pt-8 pl-0 fixed top-0 left-0 overflow-x-hidden bg-slate-50 dark:bg-gray-800 shadow-md duration-500"
+    >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#home"
+        >Home</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#courses"
+        >Courses</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#pricing"
+        >Pricing</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#about"
+        >About Us</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#contact"
+        >Contact</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="#blog"
+        >Blog</a
+      >
+    </div>
+    <!-- Homepage -->
+    <section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+      <!-- Banner -->
+      <div class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center">
+        <div class="flex justify-center items-center flex-col lg:flex-row">
+          <div class="lg:w-3/5 px-8 text-center lg:text-left">
+            <h1 class="text-6xl font-bold text-gray-800 dark:text-white mb-5">
+              Nauka Jazdy Romek
+            </h1>
+            <div class="px-5 mb-5 text-left">
+              <p class="text-gray-600 dark:text-gray-300">
+                al. Jana Pawła II 36/12a
+              </p>
+              <p class="text-gray-600 dark:text-gray-300 mb-2">
+                Kędzierzyn-Koźle
+              </p>
+              <a href="#" class="text-primary-600 dark:text-gray-300 underline"
+                >Tel. 603 093 024</a
+              >
+            </div>
+            <a
+              href="#courses"
+              class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
+              >Zapisz się</a
+            >
+          </div>
+          <img
+            class="max-w-3xl w-full h-auto"
+            src="/assets/banner.png"
+            alt="Driving School Image"
+          />
+        </div>
+      </div>
+      <!-- Statistics -->
+      <div class="bg-neutral-500 py-16 px-16 mb-20 text-white text-center">
+        <div class="container mx-auto">
+          <div class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Years in Existence -->
+            <div class="p-6 bg-gray-800 rounded-lg">
+              <i class="fas fa-calendar-alt text-3xl mb-4"></i>
+              <p class="text-lg font-semibold">Lat doświadczenia</p>
+              <p class="text-2xl font-bold">12+</p>
+            </div>
 
-						<div class="num-dates grey">30</div>
-						<div class="num-dates grey">31</div>
-						<div class="num-dates">01</div>
-						<div class="num-dates">02</div>
-						<div class="num-dates">03</div>
-						<div class="num-dates"><span class="active-day">4</span></div>
-						<div class="num-dates">05</div>
+            <!-- Number of Cars -->
+            <div class="p-6 bg-gray-800 rounded-lg">
+              <i class="fas fa-car text-3xl mb-4"></i>
+              <p class="text-lg font-semibold">Pojazdów szkoleniowych</p>
+              <p class="text-2xl font-bold">5</p>
+            </div>
 
-						<div class="num-dates">06</div>
-						<div class="num-dates">07</div>
-						<div class="num-dates">08</div>
-						<div class="num-dates">09</div>
-						<div class="num-dates">10</div>
-						<div class="num-dates"><span class="active-day">11</span></div>
-						<div class="num-dates">12</div>
+            <!-- People Passed Exams -->
+            <div class="p-6 bg-gray-800 rounded-lg">
+              <i class="fas fa-check-circle text-3xl mb-4"></i>
+              <p class="text-lg font-semibold">Przeszkolonych kursantów</p>
+              <p class="text-2xl font-bold">2500+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing -->
+      <div class="pricing container max-w-full mx-auto mb-20">
+        <h2 class="text-center text-6xl font-semibold mb-8">Oferta</h2>
+        <div class="mx-auto py-8 px-4 lg:py-16 lg:px-6">
+          <div class="mx-auto text-center mb-8 lg:mb-12">
+            <h2
+              class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+            >
+              Zapoznaj się z naszą ofertą
+            </h2>
+            <p
+              class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400"
+            >
+              Oferujemy kursy na prawo jazdy kategorii B doskonale
+              przygotowujące do egzaminu. Nasza oferta objemuje zarówno całe
+              kursy jak i pakiety jazd doszkalających.
+            </p>
+          </div>
+          <div
+            class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 swiper-container"
+          >
+            <div class="swiper-wrapper">
+              <!-- Pricing Card -->
+              <div class="swiper-slide">
+                <div
+                  class="flex flex-col h-[640px] w-[400px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                >
+                  <h3 class="mb-4 text-5xl font-semibold">
+                    Egzamin w naszym samochodzie
+                  </h3>
+                  <p
+                    class="font-light text-gray-500 text-2xl lg:text-xl dark:text-gray-400"
+                  >
+                    Możliwość przystąpienia do egzaminu w naszym samochodzie.
+                  </p>
+                  <!-- List -->
+                  <ul role="list" class="my-auto space-y-4 text-left">
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Egzamin w samochodzie, którym u nas jeżdziłeś</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Dodatkowa pewność siebie</span>
+                    </li>
+                  </ul>
+                  <div class="flex justify-center items-baseline my-8">
+                    <span class="mr-2 text-5xl font-extrabold">120 zł</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Pricing Card -->
+              <div class="swiper-slide">
+                <div
+                  class="flex flex-col h-[640px] w-[400px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                >
+                  <h3 class="mb-4 text-5xl font-semibold">Kurs kategorii B</h3>
+                  <p
+                    class="font-light text-gray-500 text-2xl lg:text-xl dark:text-gray-400"
+                  >
+                    Kurs na prawo jazdy kategorii B.
+                  </p>
+                  <!-- List -->
+                  <ul role="list" class="my-auto space-y-4 text-left">
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>30 praktycznej nauki jazdy</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>30 godzin nauki teoretycznej</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Zajęcia stacjonarne</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Materiały on-line</span>
+                    </li>
+                  </ul>
+                  <div class="flex justify-center items-baseline my-8">
+                    <span class="mr-2 text-5xl font-extrabold">2900 zł</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Pricing Card -->
+              <div class="swiper-slide">
+                <div
+                  class="flex flex-col h-[640px] w-[400px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                >
+                  <h3 class="mb-4 text-5xl font-semibold">Jazdy doszkalające</h3>
+                  <p
+                    class="font-light text-gray-500 text-2xl lg:text-xl dark:text-gray-400"
+                  >
+				    Jazdy doszkalające dla naszych kursantów.
+                  </p>
+                  <!-- List -->
+                  <ul role="list" class="my-auto space-y-4 text-left">
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Tylko dla naszych kursantów</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Dodatkowe jazdy doszkalające</span>
+                    </li>
+                  </ul>
+                  <div class="flex justify-center items-baseline my-8">
+                    <span class="mr-2 text-5xl font-extrabold">100 zł</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Pricing Card -->
+              <div class="swiper-slide">
+                <div
+                  class="flex flex-col h-[640px] w-[400px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
+                >
+                  <h3 class="mb-4 text-5xl font-semibold">Jazdy doszkalające dla osób z zewnątrz</h3>
+                  <p
+                    class="font-light text-gray-500 text-2xl lg:text-xl dark:text-gray-400"
+                  >
+				    Jazdy doszkalające dla osób spoza szkoły nauki jazdy.
+                  </p>
+                  <!-- List -->
+                  <ul role="list" class="my-auto space-y-4 text-left">
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Dla wszystkich chętnych</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Dodatkowe jazdy doszkalające</span>
+                    </li>
+                  </ul>
+                  <div class="flex justify-center items-baseline my-8">
+                    <span class="mr-2 text-5xl font-extrabold">110 zł</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Events -->
+      <div class="container mx-auto mb-20 events">
+        <h2 class="text-center text-6xl font-semibold mb-8">Kursy</h2>
+        <div class="calendar py-8 lg:py-16">
+          <div class="calendar-left">
+            <div class="num-date my-6 leading-[150px]">23</div>
+            <!--num-date -->
+            <div class="day mb-4">THURSDAY</div>
+            <!--day -->
+            <div class="current-events text-center">
+              <p>Current Events</p>
+              <p>Day 09 Daily CSS Image</p>
+              <span class="posts">See post events</span>
+            </div>
+            <!--current-events -->
+          </div>
+          <!-- calendar-left -->
+          <div class="calendar-base">
+            <div class="year-container">
+              <div class="triangle triangle-left"></div>
+              <!--triangle -->
+              <div class="year">2023</div>
+              <!-- year -->
+              <div class="triangle triangle-right"></div>
+              <!--  triangle -->
+            </div>
+            <!-- year-container -->
+            <div class="months flex justify-around">
+              <span class="month-hover">Jan</span>
+              <span class="month-hover">Feb</span>
+              <span class="month-hover">Mar</span>
+              <span class="month-hover">Apr</span>
+              <span class="month-hover">May</span>
+              <span class="month-hover">Jun</span>
+              <span class="month-hover">July</span>
+              <span class="month-hover">Aug</span>
+              <span class="month-hover">Sep</span>
+              <span class="month-hover">Oct</span>
+              <strong class="month-color">Nov</strong>
+              <span class="month-hover">Dec</span>
+            </div>
+            <!-- months -->
+            <hr class="month-line" />
+            <div class="grid-container">
+              <div class="days">MON</div>
+              <div class="days">TUE</div>
+              <div class="days">WED</div>
+              <div class="days">THU</div>
+              <div class="days">FRI</div>
+              <div class="days">SAT</div>
+              <div class="days">SUN</div>
 
-						<div class="num-dates">13</div>
-						<div class="num-dates"><span class="active-day">14</span></div>
-						<div class="num-dates">15</div>
-						<div class="num-dates">16</div>
-						<div class="num-dates">17</div>
-						<div class="num-dates">18</div>
-						<div class="num-dates">19</div>
+              <div class="num-dates grey">30</div>
+              <div class="num-dates grey">31</div>
+              <div class="num-dates">01</div>
+              <div class="num-dates">02</div>
+              <div class="num-dates">03</div>
+              <div class="num-dates"><span class="active-day">4</span></div>
+              <div class="num-dates">05</div>
 
-						<div class="num-dates">20</div>
-						<div class="num-dates">21</div>
-						<div class="num-dates">22</div>
-						<div class="num-dates"><span class="active-day">23</span></div>
-						<div class="num-dates">24</div>
-						<div class="num-dates">25</div>
-						<div class="num-dates">26</div>
+              <div class="num-dates">06</div>
+              <div class="num-dates">07</div>
+              <div class="num-dates">08</div>
+              <div class="num-dates">09</div>
+              <div class="num-dates">10</div>
+              <div class="num-dates"><span class="active-day">11</span></div>
+              <div class="num-dates">12</div>
 
-						<div class="num-dates">27</div>
-						<div class="num-dates">28</div>
-						<div class="num-dates">29</div>
-						<div class="num-dates">30</div>
-						<div class="num-dates grey">01</div>
-						<div class="num-dates grey">02</div>
-						<div class="num-dates grey">03</div>
-					</div>
-				</div>
-				<!-- calendar-base -->
-			</div>
-			<!-- container -->
-		</div>
-		<!-- events -->
-		<!-- Cars gallery -->
-		<div class="container w-full mx-auto mb-20 cars">
-			<h2 class="text-center text-6xl font-semibold mb-8">Pojazdy szkoleniowe</h2>
-			<div class="swiper-container py-8 lg:py-16">
-				<div class="swiper-wrapper w-[2600px]">
-					<div class="swiper-slide">
-						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
-							<img src="/assets/clio_red_front_left_crop-removebg.png" alt="Car 1">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
-							<img src="/assets/clio_red_rear_left_crop-removebg.png" alt="Car 1">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
-							<img src="/assets/clio_red_rear_crop-removebg.png" alt="Car 1">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200">
-							<img src="/assets/clio_red_interior_crop-removebg.png" alt="Car 1">
-						</div>
-					</div>
-				</div>
-				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
-	
-		<!-- Reviews Container -->
-		<div class="container mx-auto pb-20 reviews">
-			<h2 class="text-center text-6xl font-semibold mb-8">Co o nas mówią?</h2>
-			<div class="pt-8 lg:pt-16">
-				<div class="swiper-container">
-					<div id="reviews-container" class="swiper-wrapper">
-						<div class="review-card is-loading">
-						  <div class="description"></div>
-						  <div class="rating"></div>
-						</div>
-					</div>
-				</div>
-				<!-- Add Pagination -->
-				<div class="swiper-pagination"></div>
-			</div>
-		</div>
-	</section>
+              <div class="num-dates">13</div>
+              <div class="num-dates"><span class="active-day">14</span></div>
+              <div class="num-dates">15</div>
+              <div class="num-dates">16</div>
+              <div class="num-dates">17</div>
+              <div class="num-dates">18</div>
+              <div class="num-dates">19</div>
 
-	<!-- JavaScript for sidebar interaction -->
-	<script src="./scripts/animation/sidebar.js"></script>
+              <div class="num-dates">20</div>
+              <div class="num-dates">21</div>
+              <div class="num-dates">22</div>
+              <div class="num-dates"><span class="active-day">23</span></div>
+              <div class="num-dates">24</div>
+              <div class="num-dates">25</div>
+              <div class="num-dates">26</div>
 
-	<!-- JavaScript for swiper -->
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-	<script>
-		// Cars swiper
-		var carsSwiper = new Swiper('.cars .swiper-container', {
-			slidesPerView: 'auto',
-			initialSlide: 0,
-			spaceBetween: 100,
-			centeredSlides: true,
-			pagination: {
-				el: '.cars .swiper-pagination',
-				clickable: true,
-			},
-			grabCursor: true,
-		});
+              <div class="num-dates">27</div>
+              <div class="num-dates">28</div>
+              <div class="num-dates">29</div>
+              <div class="num-dates">30</div>
+              <div class="num-dates grey">01</div>
+              <div class="num-dates grey">02</div>
+              <div class="num-dates grey">03</div>
+            </div>
+          </div>
+          <!-- calendar-base -->
+        </div>
+        <!-- container -->
+      </div>
+      <!-- events -->
+      <!-- Cars gallery -->
+      <div class="container w-full mx-auto mb-20 cars">
+        <h2 class="text-center text-6xl font-semibold mb-8">
+          Pojazdy szkoleniowe
+        </h2>
+        <div class="swiper-container py-8 lg:py-16">
+          <div class="swiper-wrapper w-[2600px]">
+            <div class="swiper-slide">
+              <div
+                class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
+              >
+                <img
+                  src="/assets/clio_red_front_left_crop-removebg.png"
+                  alt="Car 1"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
+              >
+                <img
+                  src="/assets/clio_red_rear_left_crop-removebg.png"
+                  alt="Car 1"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
+              >
+                <img
+                  src="/assets/clio_red_rear_crop-removebg.png"
+                  alt="Car 1"
+                />
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div
+                class="w-600 text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
+              >
+                <img
+                  src="/assets/clio_red_interior_crop-removebg.png"
+                  alt="Car 1"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
 
-		// Reviews swiper
-		var reviewsSwiper = new Swiper('.reviews .swiper-container', {
-			slidesPerView: 'auto',
-			initialSlide: 0,
-			spaceBetween: 100,
-			centeredSlides: true,
-			pagination: {
-				el: '.reviews .swiper-pagination',
-				clickable: true,
-			},
-			effect: 'cards',
-			grabCursor: true,
-		});
-	</script>
+      <!-- Reviews Container -->
+      <div class="container mx-auto pb-20 reviews">
+        <h2 class="text-center text-6xl font-semibold mb-8">Co o nas mówią?</h2>
+        <div class="pt-8 lg:pt-16">
+          <div class="swiper-container">
+            <div id="reviews-container" class="swiper-wrapper">
+              <div class="review-card is-loading">
+                <div class="description"></div>
+                <div class="rating"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-	<!-- JavaScript for fetching superprawojazdy.pl reviews -->
-	<script type="module">
-		import { fetchSuperPrawoJazdyReviews } from './scripts/fetch/fetchReviews.js';
-		import { fetchPreview } from './scripts/fetch/fetch.js';
-		import { renderSuperPrawoJazdyReview } from './scripts/render/renderReview.js';
-		import { renderPreview } from './scripts/render/renderPreview.js';
-		import { renderSwiperSlide } from './scripts/render/renderSwiper.js';
+    <!-- JavaScript for sidebar interaction -->
+    <script src="./scripts/animation/sidebar.js"></script>
 
-		const url = 'https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm';
-		const reviews = await fetchSuperPrawoJazdyReviews(url);
+    <!-- JavaScript for swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      // Cars swiper
+      var carsSwiper = new Swiper(".cars .swiper-container", {
+        slidesPerView: "auto",
+        initialSlide: 0,
+        spaceBetween: 100,
+        centeredSlides: true,
+        pagination: {
+          el: ".cars .swiper-pagination",
+          clickable: true,
+        },
+        grabCursor: true,
+      });
 
-		const reviewsContainer = document.getElementById('reviews-container');
-		// Clear existing content
-		reviewsContainer.innerHTML = '';
+      // Reviews swiper
+      var reviewsSwiper = new Swiper(".reviews .swiper-container", {
+        slidesPerView: "auto",
+        initialSlide: 0,
+        spaceBetween: 100,
+        centeredSlides: true,
+        pagination: {
+          el: ".reviews .swiper-pagination",
+          clickable: true,
+        },
+        effect: "cards",
+        grabCursor: true,
+      });
 
-		// Render reviews
-		reviews.slice(0, 3)
-			.map(review => renderSuperPrawoJazdyReview(review))
-			.map(review => renderSwiperSlide(review))
-			.forEach(review => reviewsContainer.appendChild(review));
-		// Render preview
-		const preview = await fetchPreview(url);
-		const previewCard = renderPreview(preview, url);
-		const previewSlide = renderSwiperSlide(previewCard);
-		reviewsContainer.appendChild(previewSlide);
-	</script>
-</body>
+      // Pricing swiper
+      var pricingSwiper = new Swiper(".pricing .swiper-container", {
+        slidesPerView: "auto",
+        initialSlide: 1,
+        spaceBetween: 30,
+        centeredSlides: true,
+        effect: "coverflow",
+        coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
+        grabCursor: true,
+      });
+    </script>
+
+    <!-- JavaScript for fetching superprawojazdy.pl reviews -->
+    <script type="module">
+      import { fetchSuperPrawoJazdyReviews } from "./scripts/fetch/fetchReviews.js";
+      import { fetchPreview } from "./scripts/fetch/fetch.js";
+      import { renderSuperPrawoJazdyReview } from "./scripts/render/renderReview.js";
+      import { renderPreview } from "./scripts/render/renderPreview.js";
+      import { renderSwiperSlide } from "./scripts/render/renderSwiper.js";
+
+      const url = "https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm";
+      const reviews = await fetchSuperPrawoJazdyReviews(url);
+
+      const reviewsContainer = document.getElementById("reviews-container");
+      // Clear existing content
+      reviewsContainer.innerHTML = "";
+
+      // Render reviews
+      reviews
+        .slice(0, 3)
+        .map((review) => renderSuperPrawoJazdyReview(review))
+        .map((review) => renderSwiperSlide(review))
+        .forEach((review) => reviewsContainer.appendChild(review));
+      // Render preview
+      const preview = await fetchPreview(url);
+      const previewCard = renderPreview(preview, url);
+      const previewSlide = renderSwiperSlide(previewCard);
+      reviewsContainer.appendChild(previewSlide);
+    </script>
+  </body>
 </html>
