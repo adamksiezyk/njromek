@@ -18,13 +18,12 @@
 .calendar {
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: stretch;
     font-family: 'Kanit', sans-serif;
 }
 
 .calendar-base {
     width: 700px;
-    height: 500px;
     border-radius: 0 20px 20px 0;
     background-color: white;
     color: black;
@@ -124,21 +123,19 @@
 
 .calendar-left {
     width: 300px;
-    height: 500px;
     border-radius: 20px 0px 0px 20px;
     background-color: #168bd5;
     color: white;
+	text-align: center;
 }
 
 .num-date {
     font-size: 150px;
-    width: 50%;
     margin: 0 auto;
     font-weight: 700;
 }
 
 .day {
-    width: 50%;
     margin: 0px auto;
     font-size: 30px;
 }
@@ -156,20 +153,24 @@
     color: #27e879 !important;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 768px) {
 	/* Events */
 	.calendar {
 		flex-direction: column-reverse;
+		align-items: center;
+	}
+	
+	.month-hover {
+		display: none;
 	}
 
 	.calendar-base {
-		width: 750px;
+		width: 350px;
 		border-radius: 20px 20px 0 0;
 	}
 
 	.calendar-left {
-		height: auto;
-		width: 750px;
+		width: 350px;
 		padding: 20px;
 		border-radius: 0 0 20px 20px;
 	}
