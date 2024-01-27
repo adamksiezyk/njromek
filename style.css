@@ -193,6 +193,10 @@
     margin-top: 10px;
 }
 
+.swiper-scrollbar-drag {
+    background-color: #168bd5;
+}
+
 /* Reviews */
 .author {
   font-size: 1.2em;
