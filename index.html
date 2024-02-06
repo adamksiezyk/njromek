@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
   <head>
     <title>Nauka Jazdy Romek Kędzierzyn-Koźle</title>
     <meta charset="utf-8" />
@@ -61,38 +61,28 @@
       <div>
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#home"
-          >Home</a
+          href="#kontakt"
+          >Kontakt</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#courses"
-          >Courses</a
+          href="#cennik"
+          >Cennik</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#pricing"
-          >Pricing</a
+          href="#kursy"
+          >Kursy</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#about"
-          >About Us</a
-        >
-        <a
-          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#contact"
-          >Contact</a
-        >
-        <a
-          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#blog"
-          >Blog</a
+          href="#onas"
+          >O nas</a
         >
       </div>
       <div class="pr-3 ml-auto mr-0 lg:m-0">
         <a
-          href="#courses"
+          href="tel:603093024"
           class="hidden lg:inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
           >Zapisz się</a
         >
@@ -105,39 +95,36 @@
     >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#home"
-        >Home</a
+        href="#kontakt"
+        onclick="toggleSidebar()"
+        >Kontakt</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#courses"
-        >Courses</a
+        onclick="toggleSidebar()"
+        href="#cennik"
+        >Cennik</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#pricing"
-        >Pricing</a
+        onclick="toggleSidebar()"
+        href="#kursy"
+        >Kursy</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#about"
-        >About Us</a
-      >
-      <a
-        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#contact"
-        >Contact</a
-      >
-      <a
-        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#blog"
-        >Blog</a
+        onclick="toggleSidebar()"
+        href="#onas"
+        >O nas</a
       >
     </div>
     <!-- Homepage -->
     <section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
       <!-- Banner -->
-      <div class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center">
+      <div
+        id="kontakt"
+        class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center"
+      >
         <div class="flex justify-center items-center flex-col lg:flex-row">
           <div class="lg:w-3/5 px-8 text-center lg:text-left">
             <h1
@@ -152,12 +139,14 @@
               <p class="text-gray-600 dark:text-gray-300 mb-2">
                 Kędzierzyn-Koźle
               </p>
-              <a href="#" class="text-primary-600 dark:text-gray-300 underline"
+              <a
+                href="tel:603093024"
+                class="text-primary-600 dark:text-gray-300 underline"
                 >Tel. 603 093 024</a
               >
             </div>
             <a
-              href="#courses"
+              href="tel:603093024"
               class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
               >Zapisz się</a
             >
@@ -197,7 +186,7 @@
         </div>
       </div>
       <!-- Pricing -->
-      <div class="pricing container max-w-full mx-auto mb-20">
+      <div id="cennik" class="pricing container max-w-full mx-auto mb-20">
         <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
           Oferta
         </h2>
@@ -480,7 +469,7 @@
         </div>
       </div>
       <!-- Events -->
-      <div class="container mx-auto mb-20 events">
+      <div id="kursy" class="container mx-auto mb-20 events">
         <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
           Kursy
         </h2>
@@ -618,7 +607,7 @@
       </div>
 
       <!-- Reviews Container -->
-      <div class="container mx-auto pb-20 reviews">
+      <div id="onas" class="container mx-auto pb-20 reviews">
         <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
           Co o nas mówią?
         </h2>
@@ -639,6 +628,9 @@
 
     <!-- JavaScript for sidebar interaction -->
     <script src="./scripts/animation/sidebar.js"></script>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script src="./scripts/animation/smoothScroll.js"></script>
 
     <!-- JavaScript for swiper -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
