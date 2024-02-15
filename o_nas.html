@@ -1,0 +1,237 @@
+<!doctype html>
+<html class="scroll-smooth">
+  <head>
+    <title>Nauka Jazdy Romek Kędzierzyn-Koźle</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: { 600: "#168bd5" },
+            },
+          },
+          fontFamily: {
+            "acumin-pro": ["acumin-pro", "sans-serif"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-acumin-pro text-lg">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white dark:bg-gray-800 dark:text-white border-b-2 border-gray-300 dark:border-gray-600 shadow"
+    >
+      <div
+        id="burger-icon"
+        class="block lg:hidden relative px-7 text-4xl cursor-pointer duration-500"
+        onclick="toggleSidebar()"
+      >
+        &#9776;
+      </div>
+      <div class="pl-3">
+        <img
+          src="/assets/logo_simple.png"
+          alt="Logo"
+          class="h-12 block dark:hidden"
+        />
+        <img
+          src="/assets/logo_simple_dark.png"
+          alt="Logo"
+          class="h-12 hidden dark:block"
+        />
+      </div>
+      <div>
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/"
+          >Strona Główna</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#kontakt"
+          >Kontakt</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#cennik"
+          >Cennik</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#kursy"
+          >Kursy</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#opinie"
+          >Opinie</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/o_nas.html"
+          >O nas</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/faq.html"
+          >FAQ</a
+        >
+      </div>
+      <div class="pr-3 ml-auto mr-0 lg:m-0">
+        <a
+          href="tel:733433033"
+          class="hidden lg:inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
+          >Zapisz się</a
+        >
+      </div>
+    </header>
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="h-full w-0 pt-24 pl-0 fixed top-0 left-0 z-10 overflow-x-hidden bg-slate-50 dark:bg-gray-800 shadow-md duration-500"
+    >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="/"
+        onclick="toggleSidebar()"
+        >Strona Główna</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="/#kontakt"
+        onclick="toggleSidebar()"
+        >Kontakt</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#cennik"
+        >Cennik</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#kursy"
+        >Kursy</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#opinie"
+        >Opinie</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/o_nas.html"
+        >O nas</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/faq.html"
+        >FAQ</a
+      >
+    </div>
+    <!-- Homepage -->
+    <section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+      <div id="kursy" class="container mx-auto events">
+        <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
+          Kursy
+        </h2>
+        <div class="mx-auto text-center pb-8 lg:pb-12">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            O naszej szkole
+          </h2>
+          <img
+            src="/assets/logo_simple.png"
+            alt="Logo"
+            class="h-24 block dark:hidden mx-auto mb-5"
+          />
+          <img
+            src="/assets/logo_simple_dark.png"
+            alt="Logo"
+            class="h-24 hidden dark:block mx-auto mb-5"
+          />
+          <div class="">
+            <img
+              src="/assets/plac.jpg"
+              alt="Plac manewrowy"
+              class="lg:float-left w-[350px] lg:w-[480px] block mx-auto lg:mx-5 mb-5 rounded-lg shadow"
+            />
+            <p
+              class="px-5 mb-5 font-light text-justify text-gray-500 sm:text-xl dark:text-gray-400"
+            >
+              Nauka Jazdy „ROMEK” to wyróżniający się w
+              Kędzierzynie-Koźlu ośrodek szkolenia przyszłych kierowców .
+              Zlokalizowana jest w sercu Kędzierzyna , w jego ścisłym centrum
+              przy al. Jana Pawła II 36/12a. Zajęcia prowadzone są przez
+              świetnie przygotowanych pracowników, którzy mogą pochwalić się
+              wieloletnim doświadczeniem w wykonywanej pracy. Instruktorzy są
+              nie tylko profesjonalni i wymagający, ale przede wszystkim
+              sympatyczni z ogromnym poczuciem humoru. Zależy im przede
+              wszystkim na przygotowaniu kursanta do zdania egzaminów w
+              pierwszych terminach. W „ROMKu” zajęcia praktyczne prowadzone są
+              pod okiem więcej niż jednego instruktora, przez co kursanci
+              zyskują możliwość zaczerpnięcia opinii od kilku, wykwalifikowanych
+              osób, co bezpośrednio przekłada się na szybsze zrozumienie swoich
+              błędów i łatwiejsze przyswajanie wiedzy. Zajęcia praktyczne
+              prowadzone są w przychylny dla kursanta sposób, tak, że nie musi
+              on traktować tego jako przykrego obowiązku, a raczej jako
+              przyjemność, nie odczuwając żadnego stresu podczas lekcji. Zajęcia
+              teoretyczne są prowadzone w urozmaicony sposób. Nie są to
+              wyłącznie wykłady, ale również ciekawe ćwiczenia i rozwiązywanie
+              testów. Dodatkowo w trakcie szkolenia każdy uczestnik biorący w
+              nim udział przechodzi kurs udzielania pierwszej pomocy (w cenie
+              kursu), prowadzony przez czynnych ratowników medycznych.
+              Interesującą możliwością jest odbycie teoretycznej części
+              szkolenia w formie e-learningu, dla osób, których tryb życia nie
+              pozwala na fizyczne zjawienie się na wykładach. Zajęcia praktyczne
+              z jazdy odbywają się na pojazdach szkoleniowych, które są w takiej
+              wersji jak te, na których kursantowi przyjdzie zdawać egzamin
+              Państwowy. Podczas jazd każdy będzie miał szansę poruszać się nie
+              tylko po Kędzierzynie-Koźlu, ale także odbyć trasę poza miasto,
+              zaznajomić się z większymi miastami takimi jak Opole czy Gliwice i
+              zostanie przeszkolony w taki sposób, aby nie zaskoczyła go żadna
+              sytuacja na drodze. Poza jazdami po mieście, „ROMEK” oferuje swoim
+              kursantom do dyspozycji pełnowymiarowy plac manewrowy, odwary
+              całodobowo.
+            </p>
+            <img
+              src="/assets/sala.jpg"
+              alt="Sala Wykładowa"
+              class="lg:float-right w-[350px] lg:w-[480px] block mx-auto lg:mx-5 mb-5 rounded-lg shadow"
+            />
+			<div class="clear-both"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for sidebar interaction -->
+    <script src="./scripts/animation/sidebar.js"></script>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script src="./scripts/animation/smoothScroll.js"></script>
+  </body>
+</html>

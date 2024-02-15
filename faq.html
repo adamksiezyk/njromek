@@ -1,0 +1,404 @@
+<!doctype html>
+<html class="scroll-smooth">
+  <head>
+    <title>Nauka Jazdy Romek Kędzierzyn-Koźle</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: { 600: "#168bd5" },
+            },
+          },
+          fontFamily: {
+            "acumin-pro": ["acumin-pro", "sans-serif"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-acumin-pro text-lg">
+    <!-- Navbar -->
+    <header
+      class="fixed top-0 z-50 w-full py-4 flex justify-left lg:justify-between items-center bg-white dark:bg-gray-800 dark:text-white border-b-2 border-gray-300 dark:border-gray-600 shadow"
+    >
+      <div
+        id="burger-icon"
+        class="block lg:hidden relative px-7 text-4xl cursor-pointer duration-500"
+        onclick="toggleSidebar()"
+      >
+        &#9776;
+      </div>
+      <div class="pl-3">
+        <img
+          src="/assets/logo_simple.png"
+          alt="Logo"
+          class="h-12 block dark:hidden"
+        />
+        <img
+          src="/assets/logo_simple_dark.png"
+          alt="Logo"
+          class="h-12 hidden dark:block"
+        />
+      </div>
+      <div>
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/"
+          >Strona Główna</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#kontakt"
+          >Kontakt</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#cennik"
+          >Cennik</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#kursy"
+          >Kursy</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#opinie"
+          >Opinie</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/o_nas.html"
+          >O nas</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/faq.html"
+          >FAQ</a
+        >
+      </div>
+      <div class="pr-3 ml-auto mr-0 lg:m-0">
+        <a
+          href="tel:733433033"
+          class="hidden lg:inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
+          >Zapisz się</a
+        >
+      </div>
+    </header>
+    <!-- Sidebar -->
+    <div
+      id="sidebar"
+      class="h-full w-0 pt-24 pl-0 fixed top-0 left-0 z-10 overflow-x-hidden bg-slate-50 dark:bg-gray-800 shadow-md duration-500"
+    >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="/"
+        onclick="toggleSidebar()"
+        >Strona Główna</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="/#kontakt"
+        onclick="toggleSidebar()"
+        >Kontakt</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#cennik"
+        >Cennik</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#kursy"
+        >Kursy</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/#opinie"
+        >Opinie</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/o_nas.html"
+        >O nas</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/faq.html"
+        >FAQ</a
+      >
+    </div>
+    <!-- Homepage -->
+    <section class="bg-gray-100 dark:bg-gray-900 dark:text-white">
+      <div id="kursy" class="container mx-auto events">
+        <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
+          Kursy
+        </h2>
+        <div class="mx-auto text-center pb-8 lg:pb-12">
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            FAQ
+          </h2>
+          <h2
+            class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Przed kursem
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Question 1 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                1. Kiedy mogę zacząć kurs prawa jazdy?
+              </h4>
+              <p class="hidden text-gray-700">Mając 17 lat i 9 miesięcy.</p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                2. Jakie formalności należy załatwić przed kursem?
+              </h4>
+              <p class="hidden text-gray-700">
+                Na początku zadzwoń do naszej szkoły jazdy i umówimy Cię w
+                dogodnym terminie na badania lekarskie. Potem już z badaniami i
+                zdjęciem o wymiarach 3,5 × 4,5cm udajesz się do wydziału
+                komunikacji i od ręki i bezpłatnie wyrabiasz swój profil
+                kandydata na kierowcę PKK. Jeżeli nie masz ukończonych 18. Lat
+                dodatkowo będzie potrzebna zgoda jednego rodzica. Następnie
+                wysyłasz nam swoje dane SMS-em i rozpoczynasz wykłady z teorii.
+              </p>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                3. Czy warto jeździć przed kursem?
+              </h4>
+              <p class="hidden text-gray-700">
+                TAK i NIE. Na pewno warto przed kursem zaprzyjaźnić się z
+                samochodem. Zobaczyć, gdzie znajdują się przyrządy sterujące
+                pojazdem, spróbować ruszyć i się zatrzymać w miejscach do tego
+                przeznaczonych. Jeżeli nie masz takich możliwości to też nie ma
+                powodów do stresu – wszystkiego nauczą Cię instruktorzy naszej
+                szkoły jazdy.
+              </p>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                4. Jak skutecznie przygotować się do egzaminu teoretycznego?
+              </h4>
+              <p class="hidden text-gray-700">
+                Po pierwsze: uczestnicz w zajęciach teoretycznych, rób notatki i
+                zadawaj pytania. Dobrym pomysłem jest zapoznanie się z ustawą
+                „prawo o ruchu drogowym”, która będzie Cię obowiązywała. Zanim
+                przejdziesz do rozwiązywania testów, najpierw przerób wszystkie
+                pytania działami i zaznaczaj te, które są dla Ciebie
+                niezrozumiałe. Nasi instruktorzy wytłumaczą Ci każde
+                zagadnienie.
+              </p>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                5. Kiedy zacząć kurs na prawo jazdy?
+              </h4>
+              <p class="hidden text-gray-700">
+                Najlepiej, aby kurs odbywał się cały rok, wtedy szkolenie odbywa
+                się w różnych warunkach, ale przy kursie prawo jazdy trwającym
+                około 5 do 8 tygodni najlepszym okresem jest zima. Wtedy też
+                zwykle krócej czeka się na egzamin w WORD.
+              </p>
+            </div>
+          </div>
+          <h2
+            class="mt-24 mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            W trakcie kursu
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Question 1 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                1. Jak długo trwa kurs prawa jazdy?
+              </h4>
+              <p class="hidden text-gray-700">
+                Jeżeli potrzebujesz szybko zrobić prawo jazdy, to jesteśmy w
+                stanie zrobić całą teorię w 4 dni i jazdy praktyczne w 12 dni.
+                Szkoła jazdy ROMEK dostosuje się do Twoich potrzeb.
+              </p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                2. Gdzie umawiamy się na jazdy?
+              </h4>
+              <p class="hidden text-gray-700">
+                Nasi kursanci najczęściej wybierają miejsce spotkań blisko
+                swojego miejsca pracy, szkoły lub domu. Jest też możliwość
+                rozpoczynania jazd spod domu, szkoły lub pracy. Zadzwoń do nas i
+                powiedz, skąd chciałbyś wyruszać na swoje jazdy.
+              </p>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">3. Stres podczas jazdy</h4>
+              <p class="hidden text-gray-700">
+                Sami kiedyś robiliśmy prawo jazdy i wiemy, jakie to stresujące.
+                Pamiętamy, jak sami podczas pierwszych jazd zachowywaliśmy się
+                irracjonalnie i robiliśmy błędy z perspektywy czasu niemożliwe
+                do zrobienia (np. mylenie strony lewej i prawej). Dlatego każdy
+                instruktor szkoły jazdy ROMEK odbył kurs psychologiczny. Takie
+                kursy z myślą o Was powtarzamy corocznie. Dzięki temu jesteśmy w
+                stanie zminimalizować stres naszych kursantów, a nawet sprawić,
+                by działał on na nich mobilizująco. Potrafimy pokazać, że jazda
+                samochodem to naprawdę nic strasznego, a jedynym stresem mogą
+                być, co najwyżej ceny paliwa.
+              </p>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                4. Czy mogę przenieść się do Szkoły Nauki Jazy ROMEK z innej
+                szkoły jazdy?
+              </h4>
+              <p class="hidden text-gray-700">
+                Tak, jeżeli coś jest nie w porządku na początku warto zmienić
+                instruktora. Gdyby to nie pomogło to wystarczy rozliczyć się
+                tylko za odbyte szkolenia i można kontynuować kurs prawo jazdy w
+                dowolnym OSK. Szkoła jazdy ROMEK zaprasza Was do kontynuacji
+                kursu prawo jazy u nas. Od 15 lat wszyscy, którzy tak zrobili
+                mówią, że był to strzał w dziesiątkę i polecają nas bez wyjątku
+                swoim znajomym.
+              </p>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                5. Przerwałem mój kurs prawo jazdy, co dalej?
+              </h4>
+              <p class="hidden text-gray-700">
+                Jeżeli kurs prawo jazdy jest rozpoczęty po 1 lipca 1998 r. to
+                jest dalej ważny. Zadzwoń do naszej szkoły jazdy, a my
+                wytłumaczymy Ci, jak go kontynuować bez konieczności zaczynania
+                od początku.
+              </p>
+            </div>
+          </div>
+          <h2
+            class="mt-24 mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
+          >
+            Po kursie
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Question 1 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                1. Zdałem egzamin, co dalej?
+              </h4>
+              <p class="hidden text-gray-700">
+                Po pierwsze – gratulacje! Teraz tylko odbiór prawo jazdy w
+                odpowiednim wydziale komunikacji. Wiadomość przyjdzie do Ciebie
+                SMS-em. Koszt dokumentu to 100,50 zł.
+              </p>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                2. Ile jest ważne prawo jazdy?
+              </h4>
+              <p class="hidden text-gray-700">
+                Prawo jazdy jest ważne 15 lat. Po tym czasie skontaktuj się z
+                nami. Zorganizujemy Ci badania lekarskie na prawo jazdy, które
+                zaniesiesz do Wydziału Komunikacji i będziesz mógł znów cieszyć
+                się jazdą.
+              </p>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                3. Co to jest okres próbny?
+              </h4>
+              <p class="hidden text-gray-700">
+                Jeżeli w przeciągu 2 lat od odebrania prawo jazdy popełnisz 3
+                wykroczenia, które mają wpływ na bezpieczeństwo jazdy
+                (przekroczenie prędkości powyżej 30km/h lub kolizja drogowa) to
+                starosta cofnie uprawnienia i będziesz musiał powtórzyć kurs
+                prawo jazdy. Na szczęście żaden nasz kursant jeszcze do nas nie
+                wrócił z tego powodu.
+              </p>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="border p-4 rounded-lg bg-white shadow-md">
+              <h4 class="cursor-pointer toggle-trigger text-lg font-bold mb-2">
+                4. Jakimi pojazdami mogę jeździć, posiadając prawo jazdy kat. B?
+              </h4>
+              <p class="hidden text-gray-700 text-left">
+                – samochodem dostawczym i ciężarowym o masie całkowitej 3,5 t, –
+                samochodem z przyczepą lekką do 750 kg,<br />
+                – ciągnikiem rolniczym,<br />
+                – czterokołowcem,<br />
+                – trzykołowcem z homologacją l5e,<br />
+                – motocyklem o pojemności do 50 cm3,<br />
+                – po 3 latach – motocyklem o pojemności do 125 cm3 i mocy do 11
+                kw.<br />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for sidebar interaction -->
+    <script src="./scripts/animation/sidebar.js"></script>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script src="./scripts/animation/smoothScroll.js"></script>
+    <script>
+      // Get all elements with the toggle-trigger class
+      const toggles = document.querySelectorAll(".toggle-trigger");
+
+      // Loop through each toggle element
+      toggles.forEach((toggle) => {
+        // Add click event listener to toggle content visibility
+        toggle.addEventListener("click", () => {
+          // Toggle the hidden class on the next sibling element
+          toggle.nextElementSibling.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -61,28 +61,43 @@
       <div>
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#kontakt"
+          href="/"
+          >Strona Główna</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/#kontakt"
           >Kontakt</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#cennik"
+          href="/#cennik"
           >Cennik</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#kursy"
+          href="/#kursy"
           >Kursy</a
         >
         <a
           class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
-          href="#onas"
+          href="/#opinie"
+          >Opinie</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/o_nas.html"
           >O nas</a
+        >
+        <a
+          class="hidden lg:inline-block px-4 text-gray-900 dark:text-gray-300 text-center no-underline"
+          href="/faq.html"
+          >FAQ</a
         >
       </div>
       <div class="pr-3 ml-auto mr-0 lg:m-0">
         <a
-          href="tel:603093024"
+          href="tel:733433033"
           class="hidden lg:inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
           >Zapisz się</a
         >
@@ -95,27 +110,45 @@
     >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
-        href="#kontakt"
+        href="/"
+        onclick="toggleSidebar()"
+        >Strona Główna</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        href="/#kontakt"
         onclick="toggleSidebar()"
         >Kontakt</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
         onclick="toggleSidebar()"
-        href="#cennik"
+        href="/#cennik"
         >Cennik</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
         onclick="toggleSidebar()"
-        href="#kursy"
+        href="/#kursy"
         >Kursy</a
       >
       <a
         class="block p-4 no-underline text-gray-90 dark:text-white text-left"
         onclick="toggleSidebar()"
-        href="#onas"
+        href="/#opinie"
+        >Opinie</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/o_nas.html"
         >O nas</a
+      >
+      <a
+        class="block p-4 no-underline text-gray-90 dark:text-white text-left"
+        onclick="toggleSidebar()"
+        href="/faq.html"
+        >FAQ</a
       >
     </div>
     <!-- Homepage -->
@@ -140,22 +173,72 @@
                 Kędzierzyn-Koźle
               </p>
               <a
-                href="tel:603093024"
+                href="tel:733433033"
                 class="text-primary-600 dark:text-gray-300 underline"
-                >Tel. 603 093 024</a
+                >Tel. 733 433 033</a
               >
             </div>
-            <a
-              href="tel:603093024"
-              class="inline-block py-2 px-3 bg-primary-600 text-white no-underline rounded font-bold duration-300"
-              >Zapisz się</a
-            >
+            <div class="flex flex-col items-center">
+              <h3
+                class="mt-10 text-center text-3xl lg:text-5xl font-semibold text-gray-800 dark:text-white"
+              >
+                Nie czekaj
+              </h3>
+              <p
+                class="font-semibold text-center text-gray-800 text-2xl lg:text-2xl dark:text-gray-400 mb-3"
+              >
+                Zapisz się już dziś!
+              </p>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-12 w-12 mx-auto text-primary-600 animate-bounce"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 3a1 1 0 00-1 1v5.586L5.707 8.293a1 1 0 00-1.414 1.414l4.5 4.5a1 1 0 001.414 0l4.5-4.5a1 1 0 00-1.414-1.414L11 9.586V4a1 1 0 00-1-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <!-- Sign up button -->
+              <a
+                href="tel:733433033"
+                class="inline-block bg-primary-600 text-white rounded-full px-6 py-3 font-bold text-lg"
+              >
+                Zadzwoń
+                <i class="fa fa-phone ml-1" aria-hidden="true"></i>
+              </a>
+            </div>
           </div>
           <img
             class="max-w-3xl w-full h-auto"
             src="/assets/banner.png"
             alt="Driving School Image"
           />
+        </div>
+        <div class="flex justify-center items-center mt-20">
+          <p
+            class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mb-3 mr-8"
+          >
+            Następny kurs
+          </p>
+          <div class="flex rounded-lg overflow-hidden shadow-lg bg-gray-100">
+            <!-- Left section with primary background color and calendar icon -->
+            <div
+              class="bg-primary-600 text-white flex items-center justify-center py-4 px-6"
+            >
+              <i class="fa fa-calendar-alt text-xl"></i>
+            </div>
+            <!-- Right section with white background and date -->
+            <div class="bg-white py-4 px-6 flex items-center justify-center">
+              <span class="text-gray-800 font-semibold text-lg"
+                >13 Marca 2024</span
+              >
+            </div>
+          </div>
         </div>
       </div>
       <!-- Statistics -->
@@ -166,14 +249,14 @@
             <div class="p-6 bg-gray-800 rounded-lg">
               <i class="fas fa-calendar-alt text-3xl mb-4"></i>
               <p class="text-lg font-semibold">Lat doświadczenia</p>
-              <p class="text-2xl font-bold">12+</p>
+              <p class="text-2xl font-bold">15+</p>
             </div>
 
             <!-- Number of Cars -->
             <div class="p-6 bg-gray-800 rounded-lg">
               <i class="fas fa-car text-3xl mb-4"></i>
               <p class="text-lg font-semibold">Pojazdów szkoleniowych</p>
-              <p class="text-2xl font-bold">5</p>
+              <p class="text-2xl font-bold">6</p>
             </div>
 
             <!-- People Passed Exams -->
@@ -210,62 +293,7 @@
           >
             <div class="swiper-wrapper">
               <!-- Pricing Card -->
-              <div class="swiper-slide">
-                <div
-                  class="flex flex-col h-[640px] w-[350px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
-                >
-                  <h3 class="mb-4 text-3xl lg:text-5xl font-semibold">
-                    Egzamin w naszym samochodzie
-                  </h3>
-                  <p
-                    class="font-light text-gray-500 text-2xl lg:text-xl dark:text-gray-400"
-                  >
-                    Możliwość przystąpienia do egzaminu w naszym samochodzie.
-                  </p>
-                  <!-- List -->
-                  <ul role="list" class="my-auto space-y-4 text-left">
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Egzamin w samochodzie, którym u nas jeżdziłeś</span>
-                    </li>
-                    <li class="flex items-center space-x-3">
-                      <!-- Icon -->
-                      <svg
-                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clip-rule="evenodd"
-                        ></path>
-                      </svg>
-                      <span>Dodatkowa pewność siebie</span>
-                    </li>
-                  </ul>
-                  <div class="flex justify-center items-baseline my-8">
-                    <span class="mr-2 text-3xl lg:text-5xl font-extrabold"
-                      >120 zł</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <!-- Pricing Card -->
-              <div class="swiper-slide">
+              <div class="swiper-slide order-1 lg:order-2">
                 <div
                   class="flex flex-col h-[640px] w-[350px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
@@ -293,7 +321,7 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>30 praktycznej nauki jazdy</span>
+                      <span>30 godzin praktycznej nauki jazdy</span>
                     </li>
                     <li class="flex items-center space-x-3">
                       <!-- Icon -->
@@ -325,7 +353,7 @@
                           clip-rule="evenodd"
                         ></path>
                       </svg>
-                      <span>Zajęcia stacjonarne</span>
+                      <span>Wykłady stacjonarne</span>
                     </li>
                     <li class="flex items-center space-x-3">
                       <!-- Icon -->
@@ -343,6 +371,22 @@
                       </svg>
                       <span>Materiały on-line</span>
                     </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>Płatność w dogodnych ratach</span>
+                    </li>
                   </ul>
                   <div class="flex justify-center items-baseline my-8">
                     <span class="mr-2 text-3xl lg:text-5xl font-extrabold"
@@ -352,7 +396,7 @@
                 </div>
               </div>
               <!-- Pricing Card -->
-              <div class="swiper-slide">
+              <div class="swiper-slide order-2 lg:order-1">
                 <div
                   class="flex flex-col h-[640px] w-[350px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
@@ -398,6 +442,38 @@
                       </svg>
                       <span>Dodatkowe jazdy doszkalające</span>
                     </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>W dowolne dni</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>W dowolnych godzinach</span>
+                    </li>
                   </ul>
                   <div class="flex justify-center items-baseline my-8">
                     <span class="mr-2 text-3xl lg:text-5xl font-extrabold"
@@ -407,7 +483,7 @@
                 </div>
               </div>
               <!-- Pricing Card -->
-              <div class="swiper-slide">
+              <div class="swiper-slide order-3">
                 <div
                   class="flex flex-col h-[640px] w-[350px] p-10 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white"
                 >
@@ -453,6 +529,38 @@
                       </svg>
                       <span>Dodatkowe jazdy doszkalające</span>
                     </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>W dowolne dni</span>
+                    </li>
+                    <li class="flex items-center space-x-3">
+                      <!-- Icon -->
+                      <svg
+                        class="flex-shrink-0 w-5 h-5 text-green-500 dark:text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span>W dowolnych godzinach</span>
+                    </li>
                   </ul>
                   <div class="flex justify-center items-baseline my-8">
                     <span class="mr-2 text-3xl lg:text-5xl font-extrabold"
@@ -493,93 +601,26 @@
             class="w-[350px] lg:w-[768px] mx-auto rounded-lg shadow"
           />
         </div>
-        <div class="pb-8 lg:pb-16"></div>
         <div class="mx-auto text-center mb-8 lg:mb-12">
           <h2
             class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
           >
-            Dogodne terminy kursów
+            Plac manewrowy
           </h2>
           <p
             class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400"
-          ></p>
-        </div>
-        <div class="calendar pb-8 lg:pb-16">
-          <div class="calendar-left">
-            <div class="num-date mb-4 leading-[150px]">23</div>
-            <!--num-date -->
-            <div class="day mb-4">CZWARTEK</div>
-            <!--day -->
-            <div class="current-events text-center">
-              <p>Wykład, 18:00</p>
-              <p>MDK Chemik, sala 413</p>
-            </div>
-            <!--current-events -->
-          </div>
-          <!-- calendar-left -->
-          <div class="calendar-base">
-            <div class="year-container">
-              <div class="triangle triangle-left"></div>
-              <!--triangle -->
-              <div class="year">Sty., 2024</div>
-              <!-- year -->
-              <div class="triangle triangle-right"></div>
-              <!--  triangle -->
-            </div>
-            <!-- year-container -->
-            <!-- months -->
-            <hr class="month-line" />
-            <div class="grid-container">
-              <div class="days">Pon</div>
-              <div class="days">Wt</div>
-              <div class="days">Śr</div>
-              <div class="days">Czw</div>
-              <div class="days">Pt</div>
-              <div class="days">Sb</div>
-              <div class="days">Nd</div>
-
-              <div class="num-dates grey">30</div>
-              <div class="num-dates grey">31</div>
-              <div class="num-dates">01</div>
-              <div class="num-dates">02</div>
-              <div class="num-dates">03</div>
-              <div class="num-dates"><span class="active-day">4</span></div>
-              <div class="num-dates">05</div>
-
-              <div class="num-dates">06</div>
-              <div class="num-dates">07</div>
-              <div class="num-dates">08</div>
-              <div class="num-dates">09</div>
-              <div class="num-dates">10</div>
-              <div class="num-dates"><span class="active-day">11</span></div>
-              <div class="num-dates">12</div>
-
-              <div class="num-dates">13</div>
-              <div class="num-dates"><span class="active-day">14</span></div>
-              <div class="num-dates">15</div>
-              <div class="num-dates">16</div>
-              <div class="num-dates">17</div>
-              <div class="num-dates">18</div>
-              <div class="num-dates">19</div>
-
-              <div class="num-dates">20</div>
-              <div class="num-dates">21</div>
-              <div class="num-dates">22</div>
-              <div class="num-dates"><span class="active-day">23</span></div>
-              <div class="num-dates">24</div>
-              <div class="num-dates">25</div>
-              <div class="num-dates">26</div>
-
-              <div class="num-dates">27</div>
-              <div class="num-dates">28</div>
-              <div class="num-dates">29</div>
-              <div class="num-dates">30</div>
-              <div class="num-dates grey">01</div>
-              <div class="num-dates grey">02</div>
-              <div class="num-dates grey">03</div>
-            </div>
-          </div>
-          <!-- calendar-base -->
+          >
+            Do Państwa dyspozycji posiadamy pełnowymiarowy i oświetlony plac
+            manewrowy. <br />
+            ul. Mostowa 1A (Parking za Hala widowiskowo-sportowa Azoty) <br />
+            Lekcje odbywają się na samochodach Renault Clio V takich samych jak
+            na egzaminie.
+          </p>
+          <img
+            src="/assets/plac.jpg"
+            alt="Plac manewrowy"
+            class="w-[350px] lg:w-[768px] mx-auto rounded-lg shadow"
+          />
         </div>
         <!-- container -->
       </div>
@@ -608,8 +649,9 @@
                 class="w-[350px] lg:w-[768px] text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
               >
                 <img
-                  src="/assets/clio_red_front_left_crop-removebg.png"
+                  src="/assets/clio_red_front_right.png"
                   alt="Car 1"
+                  class="mx-auto"
                 />
               </div>
             </div>
@@ -618,28 +660,9 @@
                 class="w-[350px] lg:w-[768px] text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
               >
                 <img
-                  src="/assets/clio_red_rear_left_crop-removebg.png"
+                  src="/assets/clio_white_front_right.png"
                   alt="Car 1"
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="w-[350px] lg:w-[768px] text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
-              >
-                <img
-                  src="/assets/clio_red_rear_crop-removebg.png"
-                  alt="Car 1"
-                />
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div
-                class="w-[350px] lg:w-[768px] text-gray-900 bg-white rounded-lg border border-gray-100 shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white transition-transform duration-200"
-              >
-                <img
-                  src="/assets/clio_red_interior_crop-removebg.png"
-                  alt="Car 1"
+                  class="mx-auto"
                 />
               </div>
             </div>
@@ -650,10 +673,34 @@
       </div>
 
       <!-- Reviews Container -->
-      <div id="onas" class="container mx-auto pb-20 reviews">
+      <div id="opinie" class="container mx-auto pb-20 reviews">
         <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
           Co o nas mówią?
         </h2>
+        <div
+          class="flex justify-around items-center w-[350px] lg:w-[768px] mx-auto mb-12"
+        >
+          <div>
+            <h3 class="text-2xl text-center">Google</h3>
+            <div class="flex justify-center items-center">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-2xl text-center">Super Prawo Jazdy</h3>
+            <div class="flex justify-center items-center">
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+              <i class="fas fa-star text-yellow-500"></i>
+            </div>
+          </div>
+        </div>
         <div class="swiper-container">
           <div id="reviews-container" class="swiper-wrapper">
             <div class="review-card is-loading">
@@ -706,7 +753,7 @@
       // Pricing swiper
       var pricingSwiper = new Swiper(".pricing .swiper-container", {
         slidesPerView: "auto",
-        initialSlide: 1,
+        initialSlide: window.innerWidth < 1024 ? 0 : 1,
         spaceBetween: 30,
         centeredSlides: true,
         effect: "coverflow",
