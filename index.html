@@ -172,29 +172,62 @@
         class="container w-full mx-auto mb-20 pt-40 lg:pt-20 text-center"
       >
         <div class="flex justify-center items-center flex-col lg:flex-row">
-          <div class="lg:w-3/5 px-8 text-center lg:text-left">
+          <div
+            class="lg:w-3/5 px-8 flex flex-col justify-center text-center lg:text-left"
+          >
             <img
               src="/assets/logo_simple.png"
               alt="Logo"
-              class="h-28 block dark:hidden"
+              class="h-28 block mx-auto dark:hidden"
             />
             <img
               src="/assets/logo_simple_dark.png"
               alt="Logo"
               class="h-28 hidden dark:block"
             />
-            <div class="px-5 mb-5 text-left">
-              <p class="text-gray-600 dark:text-gray-300">
+            <div class="px-5 mb-10 mx-auto text-left">
+              <p
+                class="inline-block text-gray-600 font-extrabold dark:text-gray-300"
+              >
                 al. Jana Pawła II 36/12a
               </p>
-              <p class="text-gray-600 dark:text-gray-300 mb-2">
+              <br />
+              <p
+                class="inline-block text-gray-600 font-extrabold dark:text-gray-300 mb-2"
+              >
                 Kędzierzyn-Koźle
               </p>
+              <br />
               <a
                 href="tel:733433033"
-                class="text-primary-600 dark:text-gray-300 underline"
+                class="text-primary-600 font-extrabold dark:text-gray-300 underline"
                 >Tel. 733 433 033</a
               >
+            </div>
+            <div class="flex flex-col justify-center items-center">
+              <p
+                class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mb-3 mr-8"
+              >
+                Najbliższy kurs
+              </p>
+              <div
+                class="flex rounded-lg overflow-hidden shadow-lg bg-gray-100"
+              >
+                <!-- Left section with primary background color and calendar icon -->
+                <div
+                  class="bg-primary-600 text-white flex items-center justify-center py-4 px-6"
+                >
+                  <i class="fa fa-calendar-alt text-xl"></i>
+                </div>
+                <!-- Right section with white background and date -->
+                <div
+                  class="bg-white py-4 px-6 flex items-center justify-center"
+                >
+                  <span class="text-gray-800 font-semibold text-lg"
+                    >13 Marca 2024</span
+                  >
+                </div>
+              </div>
             </div>
             <div class="flex flex-col items-center">
               <h3
@@ -224,16 +257,12 @@
               <!-- Sign up button -->
               <a
                 href="tel:733433033"
-                class="inline-block bg-primary-600 text-white rounded-full px-6 py-3 font-bold text-lg"
+                class="inline-block bg-primary-600 text-white text-center rounded-full px-6 py-3 font-bold text-lg"
               >
                 Zadzwoń
-                <i class="fa fa-phone ml-1" aria-hidden="true"></i>
+                <i class="fa fa-phone ml-1" aria-hidden="true"></i><br />
+                Tel. 733 433 033
               </a>
-              <a
-                href="tel:733433033"
-                class="text-primary-600 dark:text-gray-300 underline"
-                >Tel. 733 433 033</a
-              >
             </div>
           </div>
           <img
@@ -241,29 +270,6 @@
             src="/assets/banner.png"
             alt="Driving School Image"
           />
-        </div>
-        <div
-          class="flex flex-col lg:flex-row justify-center items-center mt-20"
-        >
-          <p
-            class="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white mb-3 mr-8"
-          >
-            Następny kurs
-          </p>
-          <div class="flex rounded-lg overflow-hidden shadow-lg bg-gray-100">
-            <!-- Left section with primary background color and calendar icon -->
-            <div
-              class="bg-primary-600 text-white flex items-center justify-center py-4 px-6"
-            >
-              <i class="fa fa-calendar-alt text-xl"></i>
-            </div>
-            <!-- Right section with white background and date -->
-            <div class="bg-white py-4 px-6 flex items-center justify-center">
-              <span class="text-gray-800 font-semibold text-lg"
-                >13 Marca 2024</span
-              >
-            </div>
-          </div>
         </div>
       </div>
       <!-- Statistics -->
@@ -716,13 +722,25 @@
       <!-- Reviews Container -->
       <div id="opinie" class="container mx-auto pb-20 reviews">
         <h2 class="text-center text-4xl lg:text-6xl font-semibold mb-8">
-          Co o nas mówią?
+          Sprawdź opinie o nas
         </h2>
+        <div class="mx-auto text-center mb-8 lg:mb-12">
+          <p
+            class="mb-5 font-light text-gray-500 sm:text-xl dark:text-gray-400"
+          >
+            Sprawdz ponad 500 opinni o naszej fimie.
+          </p>
+        </div>
         <div
           class="flex flex-col lg:flex-row justify-around items-center w-[350px] lg:w-[768px] mx-auto"
         >
           <div class="mb-12">
-            <h3 class="text-2xl text-center">Google</h3>
+            <a
+              href="https://g.co/kgs/5N2vFNw"
+              target="_blank"
+              class="block text-2xl text-center text-primary-600 underline"
+              >Google</a
+            >
             <div class="flex justify-center items-center">
               <i class="fas fa-star text-yellow-500"></i>
               <i class="fas fa-star text-yellow-500"></i>
@@ -732,7 +750,12 @@
             </div>
           </div>
           <div class="mb-12">
-            <h3 class="text-2xl text-center">Super Prawo Jazdy</h3>
+            <a
+              href="https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm#opinie"
+              target="_blank"
+              class="block text-2xl text-center text-primary-600 underline"
+              >Super Prawo Jazdy</a
+            >
             <div class="flex justify-center items-center">
               <i class="fas fa-star text-yellow-500"></i>
               <i class="fas fa-star text-yellow-500"></i>
