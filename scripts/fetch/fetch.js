@@ -1,6 +1,6 @@
 // Function to fetch HTML content from the URL using CORS
 export async function fetchHTML(url) {
-	const corsAnywhereURL = 'https://corsproxy.io/?';
+	const corsAnywhereURL = 'https://corsproxy.io/?url=';
 	const targetURL = corsAnywhereURL + url;
 	try {
 		const response = await fetch(targetURL);

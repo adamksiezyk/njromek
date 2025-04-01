@@ -885,8 +885,9 @@
       import { renderPreview } from "./scripts/render/renderPreview.js";
       import { renderSwiperSlide } from "./scripts/render/renderSwiper.js";
 
-      const url = "https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm";
-      const reviews = await fetchSuperPrawoJazdyReviews(url);
+      const URL = "https://www.superprawojazdy.pl/szkola-jazdy-romek,9272.htm";
+      const NUM_REVIEWS = 5;
+      const reviews = await fetchSuperPrawoJazdyReviews(URL);
 
       const reviewsContainer = document.getElementById("reviews-container");
       // Clear existing content
@@ -894,13 +895,13 @@
 
       // Render reviews
       reviews
-        .slice(0, 3)
+        .slice(0, NUM_REVIEWS)
         .map((review) => renderSuperPrawoJazdyReview(review))
         .map((review) => renderSwiperSlide(review))
         .forEach((review) => reviewsContainer.appendChild(review));
       // Render preview
-      const preview = await fetchPreview(url);
-      const previewCard = renderPreview(preview, url);
+      const preview = await fetchPreview(URL);
+      const previewCard = renderPreview(preview, URL);
       const previewSlide = renderSwiperSlide(previewCard);
       reviewsContainer.appendChild(previewSlide);
     </script>
