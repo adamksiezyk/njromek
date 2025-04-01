@@ -3,12 +3,13 @@ import { fetchHTML } from './fetch.js';
 // Function to fetch data from superprawojazdy and extract reviews
 export async function fetchSuperPrawoJazdyReviews(url) {
 	const html = await fetchHTML(url);
-	return await extractSuperProwoJazdyReviews(html);
+	const baseUrl = getBaseUrl(url);
+	return await extractSuperProwoJazdyReviews(baseUrl, html);
 }
 
 // Function to extract reviews from HTML block and return as JSON
 // Returns an ordered descending by date array of reviews JSONs
-async function extractSuperProwoJazdyReviews(html) {
+async function extractSuperProwoJazdyReviews(baseUrl, html) {
 	const reviews = [];
 
 	// Use DOMParser to parse only the relevant parts of the HTML
@@ -26,6 +27,12 @@ async function extractSuperProwoJazdyReviews(html) {
 		// Extract review details
 		const authorElement = item.querySelector('.company-details-comments-item-header-person strong');
 		review.author = authorElement ? authorElement.textContent.trim().replace(/(\s*ip:.*$)/i, '') : '';
+
+		let imageElement = item.querySelector('.company-details-comments-item-header-image');
+		if (imageElement !== null) {
+			imageElement = imageElement.src.startsWith('/') ? imageElement.src.slice(1) : imageElement.src;
+			review.image = baseUrl + '/' + getUrlPath(imageElement);
+		}
 
 		const dateElement = item.querySelector('[itemprop="datePublished"]');
 		review.date = dateElement ? dateElement.getAttribute('content') : '';
@@ -45,12 +52,18 @@ async function extractSuperProwoJazdyReviews(html) {
 		// Extract pros and cons
 		const prosElement = item.querySelector('.company-details-comments-item-scores.green-score');
 		review.pros = prosElement
-			? Array.from(prosElement.querySelectorAll('span')).map((span) => span.textContent.replace(',', '').trim())
+			? Array.from(prosElement.querySelectorAll("span"))
+				.map((span) => span.textContent.replace(",", "").trim())
+				.slice(1)
 			: [];
 
-		const consElement = item.querySelector('.company-details-comments-item-scores.red-score');
+		const consElement = item.querySelector(
+			".company-details-comments-item-scores.red-score",
+		);
 		review.cons = consElement
-			? Array.from(consElement.querySelectorAll('span')).map((span) => span.textContent.replace(',', '').trim())
+			? Array.from(consElement.querySelectorAll("span"))
+				.map((span) => span.textContent.replace(",", "").trim())
+				.slice(1)
 			: [];
 		reviews.push(review);
 	});
@@ -61,4 +74,17 @@ async function extractSuperProwoJazdyReviews(html) {
 // Function to order reviews by date in descending order
 function orderReviewsByDateDescending(reviews) {
 	return reviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+}
+
+// Function to get base URL
+function getBaseUrl(url) {
+	let pathArray = url.split('/');
+	let protocol = pathArray[0];
+	let host = pathArray[2];
+	return protocol + '//' + host;
+}
+
+// Function to get URL path
+function getUrlPath(url) {
+	return url.split('/').slice(3).join('/');
 }
